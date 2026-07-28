@@ -41,6 +41,11 @@ export const metadata: Metadata = {
   authors: [{ name: "譚良蔚 Sally Tam" }],
   creator: "譚良蔚",
   publisher: "譚良蔚",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: "/icon.svg",
+    apple: "/apple-touch-icon.png",
+  },
   alternates: { canonical: "/" },
   robots: {
     index: true,
