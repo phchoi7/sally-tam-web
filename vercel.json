@@ -1,5 +1,7 @@
 {
-    "framework": "nextjs",
-    "buildCommand": "yarn build",
-    "outputDirectory": "out"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "yarn build",
+  "outputDirectory": "out",
+  "cleanUrls": true
 }
