@@ -4,7 +4,7 @@ import { teachingProjects } from "@/lib/teaching-projects";
 
 export const dynamic = "force-static";
 
-const contentUpdatedAt = new Date("2026-08-14");
+const contentUpdatedAt = new Date("2026-08-15");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [

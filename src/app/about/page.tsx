@@ -1,15 +1,31 @@
 import { IconArrowUpRight as ArrowUpRight } from "@tabler/icons-react";
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Reveal } from "@/components/site/reveal";
 import { siteUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "關於 Sally Tam｜Google AI 認證、資訊科技與 STEAM 教學",
   description:
-    "認識譚良蔚 Sally Tam 的 Google Gemini Certified Educator 專業認證、AI 教育、資訊及通訊科技、STEAM 教學與校本數字教育實踐。",
+    "認識譚良蔚 Sally Tam 的 Google Gemini Certified Educator 專業認證、資訊科技與 STEAM 教學、eClass 校本數字化、開放數據 API 及學生創科帶領經驗。",
+  keywords: [
+    "譚良蔚 Sally Tam",
+    "Google Gemini Certified Educator",
+    "資訊科技教師",
+    "設計與科技教師",
+    "STEAM 教育",
+    "eClass 系統統籌",
+    "開放數據 API 教學",
+    "Scratch 編程教學",
+  ],
   alternates: { canonical: "/about" },
-  openGraph: { url: `${siteUrl}/about` },
+  openGraph: {
+    title: "關於譚良蔚 Sally Tam｜AI、ICT、STEAM 與校本數字化",
+    description:
+      "Sally Tam 的 Google AI 認證、跨級資訊科技教學、eClass 統籌、開放數據 API 及學生創科帶領經驗。",
+    url: `${siteUrl}/about`,
+  },
 };
 
 const timeline = [
@@ -18,7 +34,14 @@ const timeline = [
     title: "全職常額教師",
     place: "天主教慈幼會伍少梅中學",
     detail:
-      "主力教授設計與科技及電腦科，兼教數學；參與課程設計、未來人才培育及學生創科比賽。",
+      "教授中一至中四設計與科技及電腦科，兼教中一至中三數學；統籌 eClass 系統及使用優化，參與未來人才培育計劃，並持續帶領學生完成 STEAM 與 ICT 創科項目。",
+  },
+  {
+    period: "2021-2022",
+    title: "實習教師",
+    place: "筲箕灣東官立中學",
+    detail:
+      "教授設計與科技及設計與應用科技，涵蓋工程圖、Onshape 三維設計及鐳射切割，累積由數碼設計走到實物製作的課堂經驗。",
   },
   {
     period: "2021-2022",
@@ -48,6 +71,74 @@ const training = [
   "Google Gemini Certified Educator 專業認證",
   "人工智能（AI）素養與負責任應用",
   "共融校園及特殊教育需要課程",
+  "教育專業領袖訓練：青少年賭博成癮處理",
+  "兒童和青少年服務教師培訓計劃",
+  "普通話水平測試證書三級乙等",
+];
+
+const schoolLeadership = [
+  {
+    title: "跨級課程設計與教學",
+    detail:
+      "負責中一至中四設計與科技及電腦科課程，並兼教中一至中三數學，把運算思維、數據處理、網頁應用、實體製作及解難能力連結不同學習階段。",
+  },
+  {
+    title: "校本數字化統籌",
+    detail:
+      "擔任學校 eClass 系統總負責人，統籌日常應用並優化使用流程；亦為學生幸福及培育工作建立管理系統，將資訊科技轉化為可持續使用的校本工具。",
+  },
+  {
+    title: "未來人才與創科培育",
+    detail:
+      "參與學校未來人才學院的人才培養計劃設計與實施，帶領學生由問題探究、原型製作、測試改良走到比賽匯報及國際教育科技交流。",
+  },
+];
+
+const ictPracticeAreas = [
+  {
+    title: "編程與網頁應用",
+    detail:
+      "以 Scratch、HTML、CSS、JavaScript 及 Python 支援程式設計、網頁資訊組織、互動邏輯、測試與除錯教學。",
+  },
+  {
+    title: "數據與應用程式設計",
+    detail:
+      "帶領學生理解政府開放數據、API 資料接口、欄位意義與資料限制，再把數據轉化為具使用情境的應用構思。",
+  },
+  {
+    title: "實體運算與數碼製作",
+    detail:
+      "運用 Micro:bit、NFC、Onshape、Tinkercad、Fusion 360 及鐳射切割，把程式、電子系統、三維設計與原型製作連結起來。",
+  },
+  {
+    title: "數字教學與內容製作",
+    detail:
+      "運用 Google Classroom、Edpuzzle、簡報、試算表、圖像及影片製作支援混合學習、學習材料設計與成果表達。",
+  },
+];
+
+const selectedTeachingEvidence = [
+  {
+    year: "2024",
+    title: "Scratch 編程設計組金獎",
+    detail:
+      "帶領中三級學生以 Scratch 創作籃球遊戲，完成事件邏輯、互動設計、測試除錯及作品演示，於全球青少年創新設計與發明大賽獲編程設計組金獎。",
+    href: "/project/youth-innovation-programming",
+  },
+  {
+    year: "2024",
+    title: "開放數據應用比賽最後 36 強",
+    detail:
+      "帶領中二至中四跨級團隊運用政府開放數據 API 共同研發應用程式，從資料理解、方案設計走到公開匯報，入圍最後 36 強。",
+    href: "/project/open-data-application",
+  },
+  {
+    year: "校本實踐",
+    title: "QEF 跨學科設計與製作",
+    detail:
+      "以智能時鐘、電話座及夏威夷小結他為設計任務，連結使用者需要、數碼建模、材料加工、實物製作、測試及反思。",
+    href: "/project/qef-cross-disciplinary-design",
+  },
 ];
 
 export default function AboutPage() {
@@ -143,6 +234,50 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section
+        className="school-leadership-section"
+        aria-labelledby="school-leadership-title"
+      >
+        <header>
+          <p className="eyebrow">School-based leadership</p>
+          <h2 id="school-leadership-title">校本職務與教育領導</h2>
+          <p>
+            Sally
+            的工作不只限於課堂，也包括學校數字平台、管理流程、人才培育與跨學科創科項目，讓資訊科技真正服務學與教及校園運作。
+          </p>
+        </header>
+        <div className="school-leadership-grid">
+          {schoolLeadership.map((item, index) => (
+            <Reveal key={item.title} delay={index * 0.05}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="ict-practice-section"
+        aria-labelledby="ict-practice-title"
+      >
+        <header>
+          <p className="eyebrow">ICT teaching practice</p>
+          <h2 id="ict-practice-title">資訊科技教學與實作能力</h2>
+          <p>
+            工具不是終點；重點是讓學生理解資料、邏輯、系統、測試及使用者需要，建立可遷移的資訊及通訊科技能力。
+          </p>
+        </header>
+        <div className="ict-practice-grid">
+          {ictPracticeAreas.map((item, index) => (
+            <Reveal key={item.title} delay={(index % 2) * 0.05}>
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       <section className="timeline-section">
         <h2>Sally 的專業歷程</h2>
         <div className="timeline">
@@ -156,6 +291,31 @@ export default function AboutPage() {
                 <h3>{item.title}</h3>
                 <strong>{item.place}</strong>
                 <p>{item.detail}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="teaching-evidence-section"
+        aria-labelledby="teaching-evidence-title"
+      >
+        <header>
+          <p className="eyebrow">Selected teaching evidence</p>
+          <h2 id="teaching-evidence-title">其他 ICT 與 STEAM 教學成果</h2>
+        </header>
+        <div className="teaching-evidence-list">
+          {selectedTeachingEvidence.map((item) => (
+            <Reveal key={item.title}>
+              <span>{item.year}</span>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.detail}</p>
+                <Link className="text-link" href={item.href}>
+                  查看教學案例
+                  <ArrowUpRight aria-hidden size={17} stroke={1.5} />
+                </Link>
               </div>
             </Reveal>
           ))}

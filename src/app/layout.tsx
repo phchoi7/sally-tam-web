@@ -120,6 +120,14 @@ const jsonLd = {
       },
       email: "mailto:sallytlww@gmail.com",
       jobTitle: "資訊及通訊科技、設計與科技及 STEAM 教師",
+      worksFor: {
+        "@type": "EducationalOrganization",
+        name: "天主教慈幼會伍少梅中學",
+      },
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "香港教育大學",
+      },
       hasCredential: {
         "@type": "EducationalOccupationalCredential",
         name: "Gemini Certified Educator",
@@ -140,6 +148,10 @@ const jsonLd = {
         "資訊及通訊科技教育",
         "Google AI 教育應用",
         "人工智能教育與數字素養",
+        "開放數據與 API 應用教學",
+        "Scratch、JavaScript 與 Python 編程教學",
+        "eClass 校本數字化統籌",
+        "三維設計與數碼製作",
         "香港中學文憑資訊及通訊科技",
         "校園數碼轉型",
         "設計與科技教育",

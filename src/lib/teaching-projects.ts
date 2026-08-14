@@ -635,6 +635,9 @@ export const teachingProjects: TeachingProject[] = [
     slug: "qef-cross-disciplinary-design",
     title: "QEF 跨學科設計項目",
     titleEn: "Designing useful objects through STEAM",
+    seoTitle: "QEF 跨學科設計項目｜譚良蔚 Sally Tam STEAM 教學",
+    seoDescription:
+      "譚良蔚 Sally Tam 以智能時鐘、電話座及夏威夷小結他設計製作，連結使用者需要、Micro:bit、數碼建模、材料加工、測試及 STEAM 反思。",
     summary:
       "Sally Tam 以智能時鐘、電話座及夏威夷小結他為題，串連設計思維、科技應用與動手製作。",
     year: "2022–2025",
@@ -656,7 +659,7 @@ export const teachingProjects: TeachingProject[] = [
     ],
     reflection:
       "好的製作課不以成品為終點。能指出問題、比較方案並解釋改良方向，設計學習才真正發生。",
-    updatedAt: "2026-08-14",
+    updatedAt: "2026-08-15",
   },
   {
     slug: "health-management-innovation",
@@ -687,14 +690,17 @@ export const teachingProjects: TeachingProject[] = [
   },
   {
     slug: "youth-innovation-programming",
-    title: "青少年創新設計與編程",
-    titleEn: "From an idea to a working program",
+    title: "Scratch 籃球遊戲與編程教學",
+    titleEn: "Scratch Basketball Game & Programming",
+    seoTitle: "Scratch 籃球遊戲與編程金獎｜譚良蔚 Sally Tam ICT 教學",
+    seoDescription:
+      "譚良蔚 Sally Tam 帶領學生以 Scratch 創作籃球遊戲，由事件邏輯、互動設計、測試除錯走到作品演示，於 2024 全球青少年創新設計與發明大賽獲編程設計組金獎。",
     summary:
-      "Sally Tam 指導創新設計與編程項目，帶領團隊由構思、實作、除錯走到公開演示。",
+      "Sally Tam 帶領學生以 Scratch 創作籃球遊戲，由構思、事件邏輯、互動設計、測試除錯走到公開演示，並獲 2024 全球青少年創新設計與發明大賽編程設計組金獎。",
     year: "2024",
     category: "編程與創新",
     audience: "Sally 所帶領的創科團隊",
-    tools: ["編程", "流程設計", "除錯", "項目匯報"],
+    tools: ["Scratch 編程", "事件與流程設計", "測試除錯", "項目匯報"],
     accent: "blue",
     challenge:
       "如何把創意轉化為穩定而可示範的程式，同時建立清晰的解難過程與團隊節奏？",
@@ -706,38 +712,61 @@ export const teachingProjects: TeachingProject[] = [
     outcomes: [
       "建立由構思、編程、測試到演示的完整工作流程。",
       "以清晰語言說明程式功能與設計選擇。",
-      "累積團隊協作及公開展示經驗。",
+      "於 2024 全球青少年創新設計與發明大賽獲編程設計組金獎。",
+    ],
+    milestones: [
+      {
+        year: "2024",
+        title: "全球青少年創新設計與發明大賽",
+        result: "編程設計組金獎",
+        detail:
+          "Sally 帶領中三級學生以 Scratch 創作籃球遊戲，完成程式邏輯、互動設計、測試與匯報。",
+        type: "award",
+      },
     ],
     reflection:
       "編程教育的核心不是記住語法，而是把問題拆細、驗證想法，並在錯誤中建立更好的解法。",
-    updatedAt: "2026-08-14",
+    updatedAt: "2026-08-15",
   },
   {
     slug: "open-data-application",
-    title: "開放數據應用挑戰",
-    titleEn: "Turning public data into a useful idea",
+    title: "開放數據 API 應用挑戰",
+    titleEn: "Open Data API Application Challenge",
+    seoTitle: "開放數據 API 應用比賽最後 36 強｜Sally Tam ICT 教學",
+    seoDescription:
+      "譚良蔚 Sally Tam 帶領中二至中四跨級團隊運用政府開放數據 API 研發應用程式，連結資料理解、系統構思及匯報，入圍開放數據應用比賽 2024 最後 36 強。",
     summary:
-      "Sally Tam 帶領團隊由資料理解走到方案表達，把公共數據轉化成具體使用情境。",
+      "Sally Tam 帶領中二至中四跨級團隊運用政府開放數據 API 研發應用程式，由資料理解、系統構思走到方案表達，入圍開放數據應用比賽 2024 最後 36 強。",
     year: "2024",
     category: "數據素養",
     audience: "Sally 所帶領的數據應用團隊",
-    tools: ["開放數據", "資料分析", "方案設計", "簡報"],
+    tools: ["政府開放數據", "API 資料接口", "資料處理", "應用程式設計"],
     accent: "green",
     challenge:
       "如何理解數據不是答案本身，而是用來發現問題、支持判斷及設計服務的材料？",
     approach: [
       "從資料來源、欄位意義及限制開始，建立基本數據判讀習慣。",
-      "把觀察連結到具體使用情境，避免只為展示技術而設計功能。",
+      "帶領中二、中三及中四學生組成跨級團隊，把 API 資料連結到具體使用情境，避免只為展示技術而設計功能。",
       "以故事線整理問題、數據證據、方案與預期影響。",
     ],
     outcomes: [
       "把數據觀察連結至可理解的使用情境。",
-      "累積資料解讀、協作及公開表達經驗。",
+      "於開放數據應用比賽 2024 入圍最後 36 強。",
       "建立由公開資料走到服務構思的方法。",
+    ],
+    milestones: [
+      {
+        year: "2024",
+        title: "開放數據應用比賽",
+        result: "入圍最後 36 強",
+        detail:
+          "跨級團隊運用政府開放數據 API 共同研發應用程式，實踐資料理解、系統設計與協作匯報。",
+        type: "showcase",
+      },
     ],
     reflection:
       "數據素養與設計能力互相補足：既要問數字代表甚麼，也要問方案真正幫助了誰。",
-    updatedAt: "2026-08-14",
+    updatedAt: "2026-08-15",
   },
 ];
 

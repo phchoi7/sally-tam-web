@@ -474,6 +474,9 @@ img {
 .home-cta h2,
 .case-content h2,
 .about-capabilities h2,
+.school-leadership-section h2,
+.ict-practice-section h2,
+.teaching-evidence-section h2,
 .timeline-section > h2,
 .training-section h2 {
   margin: 0;
@@ -1594,6 +1597,9 @@ img {
 }
 
 .about-capabilities h2,
+.school-leadership-section h2,
+.ict-practice-section h2,
+.teaching-evidence-section h2,
 .timeline-section > h2,
 .training-section h2 {
   font-size: clamp(2.5rem, 4.5vw, 4.6rem);
@@ -1626,12 +1632,139 @@ img {
   color: var(--muted);
 }
 
+.school-leadership-section {
+  padding-block: clamp(6rem, 10vw, 9rem);
+  border-top: 1px solid var(--line);
+}
+
+.school-leadership-section > header,
+.ict-practice-section > header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: end;
+}
+
+.school-leadership-section > header .eyebrow,
+.ict-practice-section > header .eyebrow {
+  grid-column: 1 / -1;
+  margin-bottom: -1rem;
+}
+
+.school-leadership-section > header > p:last-child,
+.ict-practice-section > header > p:last-child {
+  max-width: 620px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.school-leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 3.5rem;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.school-leadership-grid > div {
+  min-height: 310px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: var(--cream);
+}
+
+.school-leadership-grid span {
+  color: var(--forest);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+
+.school-leadership-grid h3,
+.ict-practice-grid h3,
+.teaching-evidence-list h3 {
+  margin: 2.4rem 0 0;
+  font-family: var(--font-serif), serif;
+  font-size: 1.55rem;
+  line-height: 1.3;
+}
+
+.school-leadership-grid p,
+.ict-practice-grid p,
+.teaching-evidence-list p {
+  margin: 1rem 0 0;
+  color: var(--muted);
+}
+
+.ict-practice-section {
+  padding: clamp(3rem, 7vw, 6rem);
+  background: #ded9c8;
+}
+
+.ict-practice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 3rem;
+  border: 1px solid #b9b49f;
+  background: #b9b49f;
+}
+
+.ict-practice-grid > div {
+  min-height: 225px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: color-mix(in srgb, var(--cream) 72%, #ded9c8);
+}
+
+.ict-practice-grid h3 {
+  margin-top: 0;
+}
+
 .timeline-section {
   display: grid;
   grid-template-columns: 0.65fr 1.35fr;
   gap: 5rem;
   padding-block: clamp(6rem, 10vw, 9rem);
   border-top: 1px solid var(--line);
+}
+
+.teaching-evidence-section {
+  padding-block: clamp(6rem, 10vw, 9rem);
+  border-top: 1px solid var(--line);
+}
+
+.teaching-evidence-section > header {
+  max-width: 760px;
+  margin-bottom: 3rem;
+}
+
+.teaching-evidence-list {
+  border-top: 1px solid var(--line);
+}
+
+.teaching-evidence-list > div {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding-block: 2.3rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.teaching-evidence-list > div > span {
+  color: var(--forest);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.teaching-evidence-list h3 {
+  margin-top: 0;
+}
+
+.teaching-evidence-list p {
+  max-width: 760px;
+}
+
+.teaching-evidence-list .text-link {
+  margin-top: 1.2rem;
 }
 
 .timeline-item {
@@ -1886,6 +2019,15 @@ img {
   .training-section {
     gap: 2.5rem;
   }
+
+  .school-leadership-grid,
+  .ict-practice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .school-leadership-grid > div {
+    min-height: 0;
+  }
 }
 
 @media (max-width: 720px) {
@@ -1942,6 +2084,8 @@ img {
   .belief,
   .profile-summary,
   .credential-evidence,
+  .school-leadership-section > header,
+  .ict-practice-section > header,
   .project-framework,
   .project-grid,
   .page-intro,
@@ -1957,6 +2101,8 @@ img {
   .belief,
   .profile-summary,
   .credential-evidence,
+  .school-leadership-section > header,
+  .ict-practice-section > header,
   .project-framework,
   .page-intro,
   .case-challenge,
@@ -2092,6 +2238,15 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .school-leadership-grid,
+  .ict-practice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .school-leadership-grid > div {
+    min-height: 0;
+  }
+
   .timeline-item {
     grid-template-columns: 1fr;
     gap: 0.8rem;
@@ -2103,6 +2258,15 @@ img {
 
   .training-section ul {
     grid-template-columns: 1fr;
+  }
+
+  .ict-practice-section {
+    padding: 2rem;
+  }
+
+  .teaching-evidence-list > div {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 
   .hero-credential {
