@@ -1,8 +1,11 @@
 import {
   IconArrowLeft as ArrowLeft,
   IconArrowRight as ArrowRight,
+  IconArrowUpRight as ArrowUpRight,
+  IconCheck as Check,
 } from "@tabler/icons-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ogImageUrl, siteUrl } from "@/lib/site-config";
@@ -19,23 +22,55 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getTeachingProject(slug);
   if (!project) return {};
 
+  const leadImage = project.gallery?.[0];
+  const image = leadImage
+    ? {
+        url: `${siteUrl}${leadImage.src}`,
+        width: leadImage.width,
+        height: leadImage.height,
+        alt: leadImage.alt,
+      }
+    : {
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        alt: `${project.title}｜Sally Tam 與 Christian Choi`,
+      };
+
   return {
-    title: `${project.title}｜香港 STEAM 教學案例`,
-    description: project.summary,
+    title: {
+      absolute: project.seoTitle ?? `${project.title}｜Sally Tam 教育科技案例`,
+    },
+    description: project.seoDescription ?? project.summary,
+    keywords: [
+      "譚良蔚",
+      "Sally Tam",
+      "Christian Choi",
+      "Product Owner",
+      "Tech Consultant",
+      project.title,
+      ...project.tools,
+    ],
+    authors: [
+      { name: "譚良蔚 Sally Tam", url: siteUrl },
+      { name: "Christian Choi", url: "https://christianchoi.com" },
+    ],
     alternates: { canonical: `/project/${project.slug}` },
     openGraph: {
-      title: `${project.title} | 譚良蔚`,
-      description: project.summary,
+      title: project.seoTitle ?? `${project.title}｜譚良蔚 Sally Tam`,
+      description: project.seoDescription ?? project.summary,
       url: `${siteUrl}/project/${project.slug}`,
       type: "article",
-      images: [
-        {
-          url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: `${project.title}教學案例`,
-        },
-      ],
+      publishedTime: project.updatedAt,
+      modifiedTime: project.updatedAt,
+      authors: [siteUrl, "https://christianchoi.com"],
+      images: [image],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.seoTitle ?? project.title,
+      description: project.seoDescription ?? project.summary,
+      images: [image],
     },
   };
 }
@@ -44,29 +79,47 @@ export default async function ProjectDetailPage({ params }: Props) {
   const { slug } = await params;
   const project = getTeachingProject(slug);
   if (!project) notFound();
+
   const index = teachingProjects.findIndex((item) => item.slug === slug);
   const nextProject = teachingProjects[(index + 1) % teachingProjects.length];
-
   const projectUrl = `${siteUrl}/project/${project.slug}`;
+  const leadImage = project.gallery?.[0];
+  const isProduct = project.projectType === "education-product";
+  const schemaType = isProduct ? "SoftwareApplication" : "CreativeWork";
+  const awardNames = project.milestones
+    ?.filter((milestone) => milestone.type === "award")
+    .map(
+      (milestone) =>
+        `${milestone.year} ${milestone.title}：${milestone.result}`,
+    );
+
   const projectJsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LearningResource",
-        "@id": `${projectUrl}#learning-resource`,
+        "@type": schemaType,
+        "@id": `${projectUrl}#project`,
         name: project.title,
         alternateName: project.titleEn,
-        description: project.summary,
+        description: project.seoDescription ?? project.summary,
         url: projectUrl,
         inLanguage: "zh-Hant-HK",
         dateModified: project.updatedAt,
-        educationalLevel: project.audience,
-        learningResourceType: "教學案例",
-        keywords: project.tools,
-        about: project.tools.map((name) => ({ "@type": "Thing", name })),
-        author: { "@id": `${siteUrl}/#sally-tam` },
+        applicationCategory: isProduct ? "EducationalApplication" : undefined,
+        operatingSystem: isProduct ? "Web" : undefined,
+        keywords: [
+          "Sally Tam",
+          "Christian Choi",
+          "Product Owner",
+          "Tech Consultant",
+          ...project.tools,
+        ],
+        creator: { "@id": `${siteUrl}/#sally-tam` },
+        contributor: { "@id": `${siteUrl}/#christian-choi` },
         isPartOf: { "@id": `${siteUrl}/#website` },
-        image: ogImageUrl,
+        image:
+          project.gallery?.map((item) => `${siteUrl}${item.src}`) ?? ogImageUrl,
+        award: awardNames?.length ? awardNames : undefined,
       },
       {
         "@type": "BreadcrumbList",
@@ -76,7 +129,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           {
             "@type": "ListItem",
             position: 2,
-            name: "教學案例",
+            name: "教育科技產品",
             item: `${siteUrl}/project`,
           },
           {
@@ -99,9 +152,10 @@ export default async function ProjectDetailPage({ params }: Props) {
           __html: JSON.stringify(projectJsonLd).replace(/</g, "\\u003c"),
         }}
       />
+
       <header className="case-hero section-shell">
         <Link className="back-link" href="/project">
-          <ArrowLeft size={18} stroke={1.5} /> 返回教學案例
+          <ArrowLeft size={18} stroke={1.5} /> 返回教育科技產品
         </Link>
         <div className="case-title">
           <div>
@@ -109,24 +163,43 @@ export default async function ProjectDetailPage({ params }: Props) {
             <h1>{project.title}</h1>
             <span>{project.titleEn}</span>
           </div>
-          <p className="case-summary">{project.summary}</p>
+          <div>
+            <p className="case-summary">{project.summary}</p>
+            {project.role ? <p className="case-role">{project.role}</p> : null}
+          </div>
         </div>
-        <div className="case-art" aria-hidden>
-          <span className="visual-ring" />
-          <span className="visual-block" />
-          <span className="visual-line" />
-        </div>
+
+        {leadImage ? (
+          <figure className="case-hero-image">
+            <Image
+              src={leadImage.src}
+              alt={leadImage.alt}
+              width={leadImage.width}
+              height={leadImage.height}
+              priority
+              sizes="(max-width: 800px) 100vw, 1240px"
+            />
+            <figcaption>{leadImage.caption}</figcaption>
+          </figure>
+        ) : (
+          <div className="case-art" aria-hidden>
+            <span className="visual-ring" />
+            <span className="visual-block" />
+            <span className="visual-line" />
+          </div>
+        )}
+
         <dl className="case-facts">
           <div>
             <dt>年份</dt>
             <dd>{project.year}</dd>
           </div>
           <div>
-            <dt>學習對象</dt>
+            <dt>{isProduct ? "使用情境" : "學習對象"}</dt>
             <dd>{project.audience}</dd>
           </div>
           <div>
-            <dt>學習範疇</dt>
+            <dt>{isProduct ? "產品與技術" : "學習範疇"}</dt>
             <dd>{project.tools.join("、")}</dd>
           </div>
         </dl>
@@ -134,12 +207,35 @@ export default async function ProjectDetailPage({ params }: Props) {
 
       <div className="case-content section-shell">
         <section className="case-challenge">
-          <p>教學命題</p>
+          <p>{isProduct ? "產品命題" : "教學命題"}</p>
           <h2>{project.challenge}</h2>
+          {project.solution ? (
+            <div className="case-solution">
+              <span>Solution</span>
+              <p>{project.solution}</p>
+            </div>
+          ) : null}
         </section>
 
+        {project.leadership?.length ? (
+          <section className="case-leadership">
+            <div>
+              <p className="section-kicker">Product leadership</p>
+              <h2>Sally Tam 如何帶領產品</h2>
+            </div>
+            <ul>
+              {project.leadership.map((item) => (
+                <li key={item}>
+                  <Check aria-hidden size={18} stroke={1.8} />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
         <section className="case-process">
-          <h2>學習設計</h2>
+          <h2>{isProduct ? "產品實踐" : "學習設計"}</h2>
           <ol>
             {project.approach.map((item, itemIndex) => (
               <li key={item}>
@@ -152,8 +248,12 @@ export default async function ProjectDetailPage({ params }: Props) {
 
         <section className="case-outcomes">
           <div>
-            <h2>學習成果</h2>
-            <p>成果不只見於獎項，也見於學生能否清楚表達自己的過程與判斷。</p>
+            <h2>{isProduct ? "產品成果" : "學習成果"}</h2>
+            <p>
+              {isProduct
+                ? "以可操作產品、校內落地及公開證據呈現價值。"
+                : "成果不只見於成品，也見於清楚的過程與判斷。"}
+            </p>
           </div>
           <ul>
             {project.outcomes.map((outcome) => (
@@ -162,14 +262,114 @@ export default async function ProjectDetailPage({ params }: Props) {
           </ul>
         </section>
 
+        {project.milestones?.length ? (
+          <section className="case-milestones">
+            <header>
+              <p className="section-kicker">Evidence & milestones</p>
+              <h2>發展時間線</h2>
+            </header>
+            <ol>
+              {project.milestones.map((milestone) => (
+                <li key={`${milestone.year}-${milestone.title}`}>
+                  <span>{milestone.year}</span>
+                  <div>
+                    <p>{milestone.title}</p>
+                    <h3>{milestone.result}</h3>
+                    <small>{milestone.detail}</small>
+                    {milestone.source ? (
+                      <a
+                        href={milestone.source.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {milestone.source.label}
+                        <ArrowUpRight aria-hidden size={16} stroke={1.6} />
+                      </a>
+                    ) : null}
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ) : null}
+
+        {project.collaboration?.length ? (
+          <section className="case-collaboration">
+            <header>
+              <p className="section-kicker">Sally Tam × Christian Choi</p>
+              <h2>角色與協作</h2>
+            </header>
+            <div>
+              {project.collaboration.map((item) => (
+                <p key={item}>{item}</p>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {project.gallery && project.gallery.length > 1 ? (
+          <section className="case-gallery" aria-labelledby="gallery-title">
+            <header>
+              <p className="section-kicker">Product evidence</p>
+              <h2 id="gallery-title">產品介面與成果</h2>
+            </header>
+            <div className="case-gallery-grid">
+              {project.gallery.slice(1).map((image) => (
+                <figure key={image.src}>
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    sizes="(max-width: 800px) 100vw, 50vw"
+                  />
+                  <figcaption>{image.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {project.productUrl || project.repositoryUrl ? (
+          <section className="case-links" aria-label="產品連結">
+            <p>Explore</p>
+            <div>
+              {project.productUrl ? (
+                <a href={project.productUrl} target="_blank" rel="noreferrer">
+                  開啟產品入口 <ArrowUpRight size={18} stroke={1.6} />
+                </a>
+              ) : null}
+              {project.repositoryUrl ? (
+                <a
+                  href={project.repositoryUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  查看 GitHub Repo <ArrowUpRight size={18} stroke={1.6} />
+                </a>
+              ) : null}
+            </div>
+          </section>
+        ) : null}
+
+        {project.privacyNote ? (
+          <aside className="case-privacy">
+            <strong>私隱與索引原則</strong>
+            <p>{project.privacyNote}</p>
+          </aside>
+        ) : null}
+
         <section className="case-reflection">
-          <p>教師反思</p>
+          <p>{isProduct ? "Product reflection" : "教師反思"}</p>
           <blockquote>{project.reflection}</blockquote>
         </section>
+
         <footer className="case-byline">
           <p>
-            案例整理：<Link href="/about">譚良蔚 Sally Tam</Link>
-            ，香港設計與科技及資訊科技教師
+            Product Owner：<Link href="/about">譚良蔚 Sally Tam</Link>
+            <span aria-hidden> · </span>
+            Tech Consultant：
+            <a href="https://christianchoi.com">Christian Choi</a>
           </p>
           <p>最後更新：2026 年 8 月 14 日</p>
         </footer>
@@ -181,7 +381,7 @@ export default async function ProjectDetailPage({ params }: Props) {
       >
         <span>下一個案例</span>
         <strong>{nextProject.title}</strong>
-        <ArrowRight size={30} stroke={1.3} />
+        <ArrowRight className="next-project-arrow" size={30} stroke={1.3} />
       </Link>
     </article>
   );

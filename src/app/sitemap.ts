@@ -39,8 +39,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...teachingProjects.map((project) => ({
       url: `${siteUrl}/project/${project.slug}`,
       lastModified: new Date(project.updatedAt),
-      changeFrequency: "yearly" as const,
-      priority: 0.8,
+      changeFrequency:
+        project.projectType === "education-product"
+          ? ("monthly" as const)
+          : ("yearly" as const),
+      priority: project.projectType === "education-product" ? 0.9 : 0.7,
     })),
   ];
 }

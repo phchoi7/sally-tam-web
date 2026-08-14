@@ -4,9 +4,10 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "譚良蔚 Sally Tam 教師作品集",
-    short_name: "Sally Tam",
-    description: "設計與科技、資訊科技及 STEAM 教師作品集。",
+    name: "譚良蔚 Sally Tam × Christian Choi 教育科技產品作品集",
+    short_name: "Sally × Christian",
+    description:
+      "Education Technology Product Owner Sally Tam 與 Tech Consultant Christian Choi 的產品作品集。",
     start_url: "/",
     display: "standalone",
     background_color: "#f3f0e8",

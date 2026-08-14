@@ -5,9 +5,9 @@ import { Reveal } from "@/components/site/reveal";
 import { siteUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "香港設計與科技教師的教學理念與專業經歷",
+  title: "Sally Tam 產品帶領方法與 Christian Choi 技術顧問協作",
   description:
-    "認識香港教師譚良蔚的教學理念、香港教育大學學歷、專業培訓及前線經驗；了解她如何以設計思維、編程與製作連結設計與科技、資訊科技及 STEAM 學習。",
+    "認識譚良蔚 Sally Tam 的教育科技 Product Owner 經歷，以及她如何與 Tech Consultant Christian Choi 協作，把教育需要轉化成可落地產品。",
   alternates: { canonical: "/about" },
   openGraph: { url: `${siteUrl}/about` },
 };
@@ -54,11 +54,15 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     "@id": `${siteUrl}/about#profile-page`,
-    name: "關於譚良蔚",
+    name: "關於譚良蔚 Sally Tam 與 Christian Choi 的產品協作",
     url: `${siteUrl}/about`,
     inLanguage: "zh-Hant-HK",
     isPartOf: { "@id": `${siteUrl}/#website` },
     mainEntity: { "@id": `${siteUrl}/#sally-tam` },
+    about: [
+      { "@id": `${siteUrl}/#sally-tam` },
+      { "@id": `${siteUrl}/#christian-choi` },
+    ],
   };
 
   return (
@@ -73,14 +77,15 @@ export default function AboutPage() {
       <header className="about-hero">
         <div>
           <p className="eyebrow">About Sally</p>
-          <h1>教育，是讓每位學生看見自己的可能。</h1>
+          <h1>理解教育現場，帶領產品真正落地。</h1>
           <p>
-            我重視課堂中的提問、協作與動手實踐。透過具意義的設計任務，學生可以把知識連結生活，亦能在反覆嘗試中建立韌性。
+            Sally Tam
+            同時擁有前線教育、設計與科技及產品帶領視角。她把模糊需要整理成產品問題、優先次序及驗收標準，再帶領團隊由原型走到實際使用。
           </p>
         </div>
         <Image
           src="/sally-tam-portrait.webp"
-          alt="香港設計與科技及 STEAM 教師譚良蔚肖像"
+          alt="教育科技 Product Owner 譚良蔚 Sally Tam 肖像"
           width={476}
           height={578}
           sizes="(max-width: 800px) 70vw, 32vw"
@@ -89,30 +94,58 @@ export default function AboutPage() {
 
       <section className="about-capabilities">
         <Reveal>
-          <h2>教學專長</h2>
+          <h2>產品與教育專長</h2>
         </Reveal>
         <div className="capability-grid">
           <Reveal>
-            <h3>課程與教學</h3>
-            <p>設計與科技、資訊科技、數學、跨學科 STEAM 課程設計。</p>
+            <h3>Product Ownership</h3>
+            <p>問題定義、使用者需要、產品方向、優先次序、驗收及落地。</p>
           </Reveal>
           <Reveal delay={0.05}>
-            <h3>數碼製作</h3>
-            <p>Micro:bit、Scratch、Python、HTML、CSS、JavaScript。</p>
+            <h3>Education Technology</h3>
+            <p>NFC、智能校園、校務流程及跨學科 STEAM 產品設計。</p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h3>設計工具</h3>
-            <p>Onshape、Tinkercad、CorelDRAW、Photoshop 及影片編輯。</p>
+            <h3>Team Leadership</h3>
+            <p>里程碑、實作任務、測試、回饋、成果展示及能力培育。</p>
           </Reveal>
           <Reveal delay={0.15}>
-            <h3>學習科技</h3>
-            <p>Google Classroom、eClass、Edpuzzle 及網上協作教學。</p>
+            <h3>Product Evidence</h3>
+            <p>公開比賽、國際交流、校內實際使用及持續產品迭代。</p>
           </Reveal>
         </div>
       </section>
 
+      <section className="training-section collaboration-profile">
+        <div>
+          <p className="eyebrow">Sally Tam × Christian Choi</p>
+          <h2>產品方向與技術落地的協作</h2>
+        </div>
+        <div className="collaboration-profile-copy">
+          <article>
+            <h3>譚良蔚 Sally Tam</h3>
+            <strong>Product Owner／產品帶領者</strong>
+            <p>
+              負責教育與校務問題定義、產品方向、使用者流程、優先次序、團隊帶領、校內協調、測試驗收與成果展示。
+            </p>
+          </article>
+          <article>
+            <h3>Christian Choi</h3>
+            <strong>Tech Consultant</strong>
+            <p>
+              支援技術可行性、方案架構、NFC
+              與網站整合、系統實作、產品訓練、除錯、部署及技術能力轉移。
+            </p>
+            <a href="https://christianchoi.com">
+              查看 Christian Choi 專業網站
+              <ArrowUpRight size={17} stroke={1.5} />
+            </a>
+          </article>
+        </div>
+      </section>
+
       <section className="timeline-section">
-        <h2>教學與學習歷程</h2>
+        <h2>Sally 的專業歷程</h2>
         <div className="timeline">
           {timeline.map((item) => (
             <Reveal
@@ -143,7 +176,7 @@ export default function AboutPage() {
       </section>
 
       <section className="about-contact">
-        <h2>交流教育與創科實踐</h2>
+        <h2>交流教育科技與產品實踐</h2>
         <a href="mailto:sallytlww@gmail.com">
           sallytlww@gmail.com <ArrowUpRight size={22} stroke={1.4} />
         </a>

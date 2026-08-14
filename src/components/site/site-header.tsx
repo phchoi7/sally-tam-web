@@ -2,7 +2,7 @@ import { IconArrowUpRight as ArrowUpRight } from "@tabler/icons-react";
 import Link from "next/link";
 
 const links = [
-  { href: "/project", label: "教學案例" },
+  { href: "/project", label: "產品案例" },
   { href: "/about", label: "關於我" },
   { href: "/contact", label: "聯絡" },
 ];
@@ -10,7 +10,7 @@ const links = [
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <Link href="/" className="wordmark" aria-label="譚良蔚首頁">
+      <Link href="/" className="wordmark" aria-label="譚良蔚 Sally Tam 首頁">
         <span>譚良蔚</span>
         <small>Sally Tam</small>
       </Link>

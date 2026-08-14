@@ -14,7 +14,8 @@ export default function PrivacyPage() {
     <article className="policy-page section-shell">
       <h1>私隱政策</h1>
       <p>
-        本網站用作展示譚良蔚的專業教學經驗及教學案例，不設帳戶系統，亦不會於網站表格收集個人資料。
+        本網站用作展示譚良蔚 Sally Tam 主導、Christian Choi
+        提供技術顧問支援的教育科技產品，不設帳戶系統，亦不會於網站表格收集個人資料。
       </p>
       <h2>網站分析</h2>
       <p>

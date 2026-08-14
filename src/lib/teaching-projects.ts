@@ -1,7 +1,29 @@
+export type ProjectImage = {
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+};
+
+export type ProjectMilestone = {
+  year: string;
+  title: string;
+  result: string;
+  detail: string;
+  source?: {
+    label: string;
+    url: string;
+  };
+  type: "award" | "showcase" | "release";
+};
+
 export type TeachingProject = {
   slug: string;
   title: string;
   titleEn: string;
+  seoTitle?: string;
+  seoDescription?: string;
   summary: string;
   year: string;
   category: string;
@@ -13,34 +35,357 @@ export type TeachingProject = {
   outcomes: string[];
   reflection: string;
   updatedAt: string;
+  projectType?: "education-product" | "teaching-case";
+  role?: string;
+  solution?: string;
+  leadership?: string[];
+  collaboration?: string[];
+  milestones?: ProjectMilestone[];
+  gallery?: ProjectImage[];
+  productUrl?: string;
+  repositoryUrl?: string;
+  privacyNote?: string;
 };
 
 export const teachingProjects: TeachingProject[] = [
+  {
+    slug: "nfc-smartmart",
+    title: "NFC 梅記智能超市",
+    titleEn: "NFC SmartMart",
+    seoTitle: "NFC 梅記智能超市｜Sally Tam × Christian Choi 教育科技產品",
+    seoDescription:
+      "Sally Tam 主導、Christian Choi 提供技術顧問支援的 NFC 梅記智能超市，以 NFC 標籤、網站及語音產品資訊連結長者友善、健康飲食、減廢與 STEAM 教育。",
+    summary:
+      "由譚良蔚 Sally Tam 擔任 Product Owner，將 NFC 標籤、網站及語音產品資訊整合成長者友善的智能超市體驗；Christian Choi 以 Tech Consultant 身份支援技術可行性、原型實作與產品訓練。",
+    year: "2023–2025",
+    category: "旗艦教育科技產品",
+    audience: "長者及 Sally 所帶領的 STEAM 團隊",
+    tools: ["NFC 標籤", "網站設計", "Web NFC", "語音資訊", "無障礙設計"],
+    accent: "amber",
+    projectType: "education-product",
+    role: "Product Owner／產品帶領：譚良蔚 Sally Tam",
+    challenge:
+      "如何把細小、密集而難以閱讀的食品標籤，轉化成長者更容易取得的價格、營養及健康資訊，同時讓科技學習回應真實社會需要？",
+    solution:
+      "NFC 梅記智能超市為商品配置 NFC 標籤。使用者以支援 NFC 的手機靠近標籤，即可進入相應商品網站，閱讀較清晰的價格與營養資料，並播放語音說明。產品由早期「伍少梅 NFC」逐步發展成具智能超市場景、長者友善設計及社會關懷定位的 NFC SmartMart。",
+    approach: [
+      "Sally 由真實購物情境界定問題，確立長者友善、健康飲食、資訊可讀性及環保減廢為產品方向。",
+      "把產品拆成 NFC 標籤、商品資料、手機網站、語音資訊及現場超市場景，安排階段目標與測試。",
+      "帶領團隊由初版「伍少梅 NFC」持續迭代成「梅記智能超市」，並透過公開展示、比賽回饋及用家視角改善產品敘事。",
+      "與 Tech Consultant Christian Choi 協作，處理技術可行性、NFC 與網站整合、原型實作訓練、除錯及部署準備。",
+    ],
+    leadership: [
+      "問題定義、使用者需要與產品願景",
+      "產品優先次序、里程碑及跨年度迭代",
+      "STEAM 團隊帶領、實作任務及展示策略",
+      "校內持份者、比賽及國際交流協調",
+    ],
+    collaboration: [
+      "譚良蔚 Sally Tam：Product Owner、產品方向、學習設計、團隊帶領及成果展示。",
+      "Christian Choi：Tech Consultant，支援方案架構、NFC 與網站整合、產品原型、實作訓練、除錯與部署諮詢。",
+      "獲帶領團隊：在 Sally 指導下參與研究、原型製作、測試及公開匯報；個人姓名不作本網站 SEO 實體。",
+    ],
+    outcomes: [
+      "建立 NFC 標籤連接商品網站的可操作智能超市體驗。",
+      "把價格、營養資料、語音資訊及較清晰的視覺層級整合於商品頁。",
+      "由校內原型發展至香港教育科技比賽、展覽及 IEEE TALE 國際交流場景。",
+      "以科技回應長者友善、健康資訊及社會關懷，形成可持續迭代的教育產品案例。",
+    ],
+    milestones: [
+      {
+        year: "2023–24",
+        title: "伍少梅 NFC",
+        result: "產品初版",
+        detail:
+          "Sally 帶領 STEAM 團隊以 NFC 標籤配合網站設計，建立商品資訊讀取原型。",
+        type: "release",
+      },
+      {
+        year: "2024",
+        title: "健康管理與社會關懷科實地學習博覽",
+        result: "創新方案銅獎及最受歡迎獎",
+        detail:
+          "以教育科技回應健康管理與社會關懷，驗證產品不只展示技術，也能連結真實使用需要。",
+        type: "award",
+      },
+      {
+        year: "2025",
+        title: "第七屆大灣區 STEAM 卓越獎（香港）",
+        result: "資訊及通訊科技中學組優異獎",
+        detail:
+          "「伍少梅 NFC」獲跨區 STEAM 評審肯定，成為產品跨年度發展的重要里程碑。",
+        type: "award",
+      },
+      {
+        year: "2024/25",
+        title: "香港理工大學 Fun-Tech 比賽",
+        result: "創意 RFID 組冠軍",
+        detail:
+          "產品進一步發展為「梅記智能超市」，強化長者友善、健康飲食及環保減廢應用。",
+        source: {
+          label: "活動公開紀錄",
+          url: "https://www.sdbnsm.edu.hk/school-news/categories/%E6%A0%A1%E9%95%B7%E5%B0%88%E6%AC%84/page/2",
+        },
+        type: "award",
+      },
+      {
+        year: "2025",
+        title: "香港教育城學生創新大賽",
+        result: "高中組季軍",
+        detail:
+          "Sally 帶領團隊於學與教展覽會決賽展示 NFC SmartMart 的產品價值與社會應用。",
+        source: {
+          label: "香港教育城官方結果",
+          url: "https://www.edcity.hk/home/zh-hant/25a/sic/202526/past-result/",
+        },
+        type: "award",
+      },
+      {
+        year: "2025.12",
+        title: "IEEE TALE 2025 Macao",
+        result: "K–12 工作坊國際展示與交流",
+        detail:
+          "以教育科技改善社會為題展示 NFC 應用，與亞太區教育工作者、工程師及研究人員交流。此項屬國際展示，不列作競賽獎項。",
+        type: "showcase",
+      },
+    ],
+    gallery: [
+      {
+        src: "/projects/nfc-smartmart-product-showcase.webp",
+        alt: "Sally Tam 主導、Christian Choi 提供技術顧問支援的 NFC 梅記智能超市產品展示",
+        caption:
+          "NFC SmartMart 展示 NFC、商品網站與長者友善資訊如何組合成完整產品體驗。",
+        width: 1600,
+        height: 1200,
+      },
+      {
+        src: "/projects/nfc-smartmart-sally-tam-christian-choi.webp",
+        alt: "Sally Tam 與 Tech Consultant Christian Choi 展示 NFC 梅記智能超市 Fun-Tech 冠軍成果",
+        caption:
+          "Sally Tam 與 Christian Choi 共同見證獲帶領團隊於 Fun-Tech 2024/25 的產品成果。",
+        width: 1600,
+        height: 1200,
+      },
+      {
+        src: "/projects/nfc-smartmart-edcity-sally-christian.webp",
+        alt: "Sally Tam 與 Christian Choi 於香港教育城學生創新大賽展示 NFC SmartMart 成果",
+        caption: "NFC SmartMart 於香港教育城學生創新大賽 2025 獲高中組季軍。",
+        width: 1600,
+        height: 1200,
+      },
+    ],
+    repositoryUrl: "https://github.com/phchoi7/sdbnsm-nfc",
+    privacyNote:
+      "本案例以 Sally Tam 與 Christian Choi 為可索引人物；獲帶領團隊以集體方式呈現，不使用個人姓名作搜尋關鍵字。",
+    reflection:
+      "教育科技的價值不在於加入最多功能，而在於能否把技術轉化成清楚、可使用、可持續改善的服務。NFC SmartMart 讓產品設計、社會關懷與 STEAM 學習成為同一條產品發展路線。",
+    updatedAt: "2026-08-14",
+  },
+  {
+    slug: "school-room-booking-system",
+    title: "校園房間預約系統",
+    titleEn: "School Room Booking System",
+    seoTitle: "校園房間預約系統｜Sally Tam × Christian Choi 智能校園產品",
+    seoDescription:
+      "Sally Tam 主導、Christian Choi 提供技術顧問支援的校園房間預約系統，整合課室狀態、衝突檢測、行政批核、雙語通知、紀錄及數據報表。",
+    summary:
+      "Sally Tam 由校內房間使用與批核痛點出發，主導一套已投入實際運作的預約產品；Christian Choi 支援系統架構、實作與部署諮詢。",
+    year: "2025–2026",
+    category: "智能校園落地系統",
+    audience: "教師、校務行政及系統管理員",
+    tools: ["Next.js", "Firebase", "Firestore", "角色權限", "PWA"],
+    accent: "blue",
+    projectType: "education-product",
+    role: "Product Owner／校內落地：譚良蔚 Sally Tam",
+    challenge:
+      "當房間狀態、上課時段、預約申請與行政批核分散處理時，如何減少衝突、重複查問與人工整理，同時提高校園資源使用的透明度？",
+    solution:
+      "系統以月曆及即時房間狀態矩陣呈現課室與特別室可用情況，將預約申請、衝突檢測、班級上課封鎖、行政批核、雙語通知、活動紀錄及報表放進同一工作流。登入及資料權限按 teacher、admin、superAdmin 三種角色分層處理。",
+    approach: [
+      "Sally 整理教師與行政人員的日常預約流程，界定哪些資料要即時可見、哪些動作需要批核。",
+      "以房間、日期、時段及班級使用資料建立一致規則，在送出及批核階段檢測衝突。",
+      "將管理工作拆成統計、所有預約、房間狀態、用戶管理、活動日誌及資料匯出，改善行政追蹤。",
+      "與 Christian Choi 協作處理 Next.js／Firebase 架構、角色權限、部署可靠性及持續改善。",
+    ],
+    leadership: [
+      "校內使用者訪談與預約流程定義",
+      "產品規則、介面優先次序及驗收",
+      "教師與行政人員採用及回饋整合",
+      "營運私隱、角色權限及持續維護方向",
+    ],
+    collaboration: [
+      "譚良蔚 Sally Tam：Product Owner，負責校內需要、產品規則、使用流程、驗收及落地。",
+      "Christian Choi：Tech Consultant，支援技術架構、Firebase 整合、系統實作、除錯、部署及技術能力轉移。",
+    ],
+    outcomes: [
+      "以即時狀態矩陣統一呈現課室、特別室、上課封鎖與可預約時段。",
+      "支援申請、批核、拒絕及同房同時段衝突處理，減少人工交叉檢查。",
+      "整合中英文介面、可選通知電郵、統計趨勢、Excel 匯出及活動日誌。",
+      "以角色權限及最後一位 SuperAdmin 保護等規則，提升校務系統管理可靠性。",
+    ],
+    milestones: [
+      {
+        year: "01",
+        title: "校內流程建模",
+        result: "由實際需要建立產品規則",
+        detail: "整理教師申請、房間使用、行政批核、衝突處理及紀錄追蹤需要。",
+        type: "release",
+      },
+      {
+        year: "02",
+        title: "即時預約工作流",
+        result: "日曆、狀態、批核與通知整合",
+        detail:
+          "使用 Firestore 即時更新預約資料，讓不同角色看到相應狀態與操作。",
+        type: "release",
+      },
+      {
+        year: "03",
+        title: "校內投入使用",
+        result: "營運、回饋與持續改善",
+        detail: "以真實校務流程驗證產品，持續改善規則、介面、報表及資料治理。",
+        type: "release",
+      },
+    ],
+    gallery: [
+      {
+        src: "/projects/booking-system-dashboard.webp",
+        alt: "Sally Tam 主導、Christian Choi 提供技術顧問支援的校園房間預約系統統計介面",
+        caption:
+          "行政儀表板把預約總量、批核狀態、房間排行與近期趨勢集中呈現。畫面使用測試資料。",
+        width: 1280,
+        height: 712,
+      },
+      {
+        src: "/projects/booking-system-room-status.webp",
+        alt: "Sally Tam 校園房間預約產品的課室即時狀態矩陣",
+        caption: "房間狀態矩陣同時呈現上課封鎖、可預約時段及預約狀態。",
+        width: 1280,
+        height: 2530,
+      },
+      {
+        src: "/projects/booking-system-booking-flow.webp",
+        alt: "Christian Choi 技術支援的校園房間預約申請流程介面",
+        caption: "老師可選擇房間類別、指定房間、時段與用途，再送交校務處批核。",
+        width: 1280,
+        height: 633,
+      },
+    ],
+    repositoryUrl: "https://github.com/phchoi7/sdbnsmbookingsystem",
+    privacyNote:
+      "營運 Repo 及生產資料不公開；案例圖片使用測試資料，不展示真實教師電郵、預約內容或內部資料結構。",
+    reflection:
+      "智能校園產品首先要尊重既有工作流程，再用清晰規則消除重複步驟。真正的落地不是完成一個介面，而是讓教師及行政人員能安心、持續地使用。",
+    updatedAt: "2026-08-14",
+  },
+  {
+    slug: "teacher-duty-scheduler",
+    title: "教師智能當值生成系統",
+    titleEn: "Teacher Duty Scheduler",
+    seoTitle: "教師智能當值生成系統｜Sally Tam × Christian Choi 校園排更工具",
+    seoDescription:
+      "Sally Tam 主導、Christian Choi 提供技術顧問支援的教師當值生成工具，針對香港中學營運需要減少人手排更，提升規則一致性與工作分配透明度。",
+    summary:
+      "由 Sally Tam 按學校實際運作需要主導的教師當值編排工具，目標是減少重複人手排更、統一編排規則並提高行政效率。",
+    year: "2025–2026",
+    category: "校務流程自動化",
+    audience: "教師及負責當值編排的行政人員",
+    tools: ["排更規則", "教師可用時段", "衝突處理", "安全存取"],
+    accent: "green",
+    projectType: "education-product",
+    role: "Product Owner／流程設計：譚良蔚 Sally Tam",
+    challenge:
+      "教師當值安排涉及人數、時段、崗位、可用性及公平性等多項限制，如何把依賴人手反覆調整的工作轉化成更一致、透明而可覆核的流程？",
+    solution:
+      "系統以校內實際運作規則為基礎，集中處理教師資料、可用時段、當值崗位與編排結果，讓行政人員減少重複配對及人工整理。公開入口使用身份驗證保護內部資料，詳細規則與結果只供獲授權使用者存取。",
+    approach: [
+      "Sally 先把日常排更經驗整理成可設定、可檢查的產品規則與操作流程。",
+      "把教師可用性、崗位、時段、分配結果及人手調整拆成清晰步驟，保留行政判斷空間。",
+      "以安全登入保護校內資料，公開作品集只展示產品目標、流程與經匿名化證據。",
+      "Christian Choi 以 Tech Consultant 身份支援技術可行性、產品實作及部署諮詢。",
+    ],
+    leadership: [
+      "校務排更問題及使用者需要定義",
+      "編排規則、例外情況與操作流程設計",
+      "校內測試、採用、回饋及產品改善",
+      "私隱、安全存取及產品溝通",
+    ],
+    collaboration: [
+      "譚良蔚 Sally Tam：Product Owner，負責排更需要、規則、介面流程、測試及校內落地。",
+      "Christian Choi：Tech Consultant，支援技術方案、產品實作、除錯、部署與持續改善諮詢。",
+    ],
+    outcomes: [
+      "把分散的排更考慮整理成可重複執行的數碼工作流。",
+      "減少人手逐項配對及重複整理，讓行政人員集中處理規則與例外。",
+      "以身份驗證限制內部排更資料，將安全與私隱納入產品設計。",
+      "已供校內老師使用，並按實際營運需要持續調整。",
+    ],
+    milestones: [
+      {
+        year: "01",
+        title: "流程盤點",
+        result: "把人手經驗轉化成產品規則",
+        detail: "由實際校務需要整理教師、時段、崗位、限制與例外情況。",
+        type: "release",
+      },
+      {
+        year: "02",
+        title: "生成與覆核",
+        result: "建立一致的編排工作流",
+        detail: "讓系統處理重複配對，同時保留行政人員檢查及調整結果的角色。",
+        type: "release",
+      },
+      {
+        year: "03",
+        title: "安全校內使用",
+        result: "以身份驗證保護資料",
+        detail:
+          "公開網址只呈現安全登入入口，實際教師及排更資料不向搜尋引擎公開。",
+        type: "release",
+      },
+    ],
+    gallery: [
+      {
+        src: "/projects/teacher-duty-system-secure-access.webp",
+        alt: "Sally Tam 與 Christian Choi 教師智能當值生成系統的安全登入入口",
+        caption:
+          "公開入口設有身份驗證；當值規則、教師資料及編排結果只供獲授權使用者存取。",
+        width: 1280,
+        height: 633,
+      },
+    ],
+    productUrl: "https://schooltime-4yyc3kfs.manus.space/",
+    privacyNote:
+      "為保障教師及校務資料，本案例不公開實際人員名單、可用時段、崗位分配及內部編排規則。",
+    reflection:
+      "流程自動化不是取消人的判斷，而是把重複整理交給系統，讓行政人員把時間放在規則、例外與溝通。產品成效應以實際使用、可覆核性與持續改善衡量。",
+    updatedAt: "2026-08-14",
+  },
   {
     slug: "qef-cross-disciplinary-design",
     title: "QEF 跨學科設計項目",
     titleEn: "Designing useful objects through STEAM",
     summary:
-      "以智能時鐘、電話座及夏威夷小結他為題，串連設計思維、科技應用與動手製作。",
-    year: "2022-2025",
+      "Sally Tam 以智能時鐘、電話座及夏威夷小結他為題，串連設計思維、科技應用與動手製作。",
+    year: "2022–2025",
     category: "跨學科 STEAM",
-    audience: "中一至中三",
+    audience: "Sally 所帶領的初中學習團隊",
     tools: ["設計思維", "原型製作", "Micro:bit", "Onshape"],
-    accent: "amber",
+    accent: "coral",
     challenge:
-      "讓學生不只完成製成品，更能理解使用者需要、功能取捨與反覆測試的價值。",
+      "如何讓學習者不只完成製成品，更能理解使用者需要、功能取捨與反覆測試的價值？",
     approach: [
-      "由生活情境與使用者需要出發，協助學生把模糊想法整理成清晰設計要求。",
-      "把大型任務拆成研究、構思、建模、製作及測試，讓不同能力的學生都能參與。",
-      "以草圖、數碼模型及實物原型記錄設計演進，鼓勵學生用證據解釋選擇。",
+      "由生活情境與使用者需要出發，把模糊想法整理成清晰設計要求。",
+      "把大型任務拆成研究、構思、建模、製作及測試，建立可跟進的設計節奏。",
+      "以草圖、數碼模型及實物原型記錄設計演進，要求每個選擇都有理據。",
     ],
     outcomes: [
-      "學生完成多類具實際用途的設計作品。",
-      "項目整合設計與科技、資訊科技及 STEM 能力。",
-      "學生在展示及反思中練習表達設計理據。",
+      "完成多類具實際用途的設計作品。",
+      "整合設計與科技、資訊科技及 STEAM 能力。",
+      "以展示及反思練習表達設計理據。",
     ],
     reflection:
-      "好的製作課不以成品為終點。當學生能指出問題、比較方案並解釋改良方向，設計學習才真正發生。",
+      "好的製作課不以成品為終點。能指出問題、比較方案並解釋改良方向，設計學習才真正發生。",
     updatedAt: "2026-08-14",
   },
   {
@@ -48,49 +393,50 @@ export const teachingProjects: TeachingProject[] = [
     title: "健康管理與社會關懷創新方案",
     titleEn: "Learning from a real social context",
     summary:
-      "帶領學生把課堂知識轉化為社會關懷方案，於教育局實地學習博覽獲創新方案銅獎及最受歡迎獎。",
+      "Sally Tam 帶領團隊把課堂知識轉化為社會關懷方案，於教育局實地學習博覽獲創新方案銅獎及最受歡迎獎。",
     year: "2024",
     category: "社會創新",
-    audience: "跨學科學生團隊",
+    audience: "Sally 所帶領的跨學科團隊",
     tools: ["資料蒐集", "協作設計", "原型測試", "匯報表達"],
     accent: "coral",
     challenge:
-      "協助學生理解真實社會需要，並在有限時間內把研究轉化為可溝通、可測試的創新方案。",
+      "如何由真實社會需要出發，在有限時間內把研究轉化為可溝通、可測試的創新方案？",
     approach: [
       "先建立議題背景與使用者視角，再界定團隊要處理的核心問題。",
-      "透過角色分工、階段檢視及同儕回饋，保持跨學科團隊的共同方向。",
+      "透過角色分工、階段檢視及回饋保持跨學科團隊的共同方向。",
       "把方案原理、使用流程與社會價值整理成清晰展示，反覆演練匯報。",
     ],
     outcomes: [
       "獲實地學習博覽 2024 創新方案銅獎。",
       "同時獲得最受歡迎獎。",
-      "學生累積由研究、製作到公開展示的完整項目經驗。",
+      "累積由研究、製作到公開展示的完整項目經驗。",
     ],
     reflection:
-      "比賽成績是鼓勵，最重要的成果是學生懂得先聆聽需要，再運用科技提出有根據的回應。",
+      "比賽成績是鼓勵，最重要的成果是先聆聽需要，再運用科技提出有根據的回應。",
     updatedAt: "2026-08-14",
   },
   {
     slug: "youth-innovation-programming",
     title: "青少年創新設計與編程",
     titleEn: "From an idea to a working program",
-    summary: "指導學生參與全球青少年創新設計與發明大賽，編程設計組獲金獎。",
+    summary:
+      "Sally Tam 指導創新設計與編程項目，帶領團隊由構思、實作、除錯走到公開演示。",
     year: "2024",
     category: "編程與創新",
-    audience: "青少年參賽團隊",
+    audience: "Sally 所帶領的創科團隊",
     tools: ["編程", "流程設計", "除錯", "項目匯報"],
     accent: "blue",
     challenge:
-      "把學生的創意轉化為穩定而可示範的程式，同時建立清晰的解難過程與團隊節奏。",
+      "如何把創意轉化為穩定而可示範的程式，同時建立清晰的解難過程與團隊節奏？",
     approach: [
       "以功能優先排序縮窄項目範圍，先完成核心流程，再逐步改善體驗。",
-      "把除錯視為學習證據，鼓勵學生記錄問題、假設、測試與修正。",
-      "透過短週期示範與回饋，讓學生持續看見進度並主動承擔工作。",
+      "把除錯視為產品證據，記錄問題、假設、測試與修正。",
+      "透過短週期示範與回饋保持進度與責任。",
     ],
     outcomes: [
-      "獲 2024 全球青少年創新設計與發明大賽編程設計組金獎。",
-      "學生建立由構思、編程、測試到演示的完整工作流程。",
-      "團隊能以清晰語言說明程式功能與設計選擇。",
+      "建立由構思、編程、測試到演示的完整工作流程。",
+      "以清晰語言說明程式功能與設計選擇。",
+      "累積團隊協作及公開展示經驗。",
     ],
     reflection:
       "編程教育的核心不是記住語法，而是把問題拆細、驗證想法，並在錯誤中建立更好的解法。",
@@ -101,26 +447,26 @@ export const teachingProjects: TeachingProject[] = [
     title: "開放數據應用挑戰",
     titleEn: "Turning public data into a useful idea",
     summary:
-      "帶領學生參與開放數據應用比賽 2024，從資料理解到方案表達，晉身最後 36 強。",
+      "Sally Tam 帶領團隊由資料理解走到方案表達，把公共數據轉化成具體使用情境。",
     year: "2024",
     category: "數據素養",
-    audience: "學生創科團隊",
+    audience: "Sally 所帶領的數據應用團隊",
     tools: ["開放數據", "資料分析", "方案設計", "簡報"],
     accent: "green",
     challenge:
-      "讓學生理解數據並非答案本身，而是用來發現問題、支持判斷及設計服務的材料。",
+      "如何理解數據不是答案本身，而是用來發現問題、支持判斷及設計服務的材料？",
     approach: [
       "從資料來源、欄位意義及限制開始，建立基本數據判讀習慣。",
       "把觀察連結到具體使用情境，避免只為展示技術而設計功能。",
-      "以故事線整理問題、數據證據、方案與預期影響，提升匯報說服力。",
+      "以故事線整理問題、數據證據、方案與預期影響。",
     ],
     outcomes: [
-      "晉身開放數據應用比賽 2024 最後 36 強。",
-      "學生能把數據觀察連結至可理解的使用情境。",
-      "團隊累積資料解讀、協作及公開表達經驗。",
+      "把數據觀察連結至可理解的使用情境。",
+      "累積資料解讀、協作及公開表達經驗。",
+      "建立由公開資料走到服務構思的方法。",
     ],
     reflection:
-      "數據素養與設計能力互相補足。學生既要問數字代表甚麼，也要問方案真正幫助了誰。",
+      "數據素養與設計能力互相補足：既要問數字代表甚麼，也要問方案真正幫助了誰。",
     updatedAt: "2026-08-14",
   },
 ];

@@ -1,7 +1,10 @@
-# 譚良蔚 Sally Tam 教師作品集
+# 譚良蔚 Sally Tam × Christian Choi 教育科技產品作品集
 
-譚良蔚的個人教師網站，集中呈現設計與科技、資訊科技、數學及
-STEAM 教學經驗、跨學科課程、學生創科成果與專業發展。
+Sally Tam 的教育科技 Product Owner 作品集，記錄 NFC
+梅記智能超市、校園房間預約及教師當值生成產品。Christian Choi 以 Tech
+Consultant 身份支援技術架構、實作訓練、除錯與部署。
+
+網站只把 Sally Tam 與 Christian Choi 建立為 SEO 人物實體。獲帶領團隊以匿名集體方式呈現；機構名稱只作必要產品情境，不作品牌主體。
 
 ## 技術
 
@@ -41,10 +44,12 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.example
 
 ## 主要內容
 
-- `/` 教師定位、教學理念、代表案例與專業肯定
-- `/project` 教學案例索引
-- `/project/[slug]` 教學案例詳情
-- `/about` 教學經歷、學歷及培訓
-- `/contact` 專業聯絡
+- `/` Sally Tam Product Owner 定位、Christian Choi 技術協作及代表產品
+- `/project/nfc-smartmart` NFC 梅記智能超市完整產品時間線
+- `/project/school-room-booking-system` 校園房間預約系統案例
+- `/project/teacher-duty-scheduler` 教師智能當值生成系統案例
+- `/project` 全部產品與教學案例
+- `/about` Sally 的專業歷程及兩人的協作模式
+- `/contact` 教育科技產品合作聯絡
 
-網站內容來自 Sally Tam 的履歷資料。出生日期、住址及諮詢人資料不會公開。
+網站不公開獲帶領團隊姓名、出生日期、住址、內部校務資料或生產環境憑證。

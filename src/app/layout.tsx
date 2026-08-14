@@ -8,26 +8,30 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  applicationName: "譚良蔚 Sally Tam",
+  applicationName: "譚良蔚 Sally Tam × Christian Choi",
   title: {
-    default: "譚良蔚 Sally Tam | 設計與科技及 STEAM 教師",
-    template: "%s | 譚良蔚 Sally Tam",
+    default: "譚良蔚 Sally Tam｜教育科技 Product Owner × Christian Choi",
+    template: "%s｜Sally Tam × Christian Choi",
   },
   description:
-    "香港設計與科技及 STEAM 教師譚良蔚的專業作品集，記錄資訊科技、數學、跨學科課程設計、學生創科作品、比賽成果與教學反思。",
+    "譚良蔚 Sally Tam 主導 NFC 梅記智能超市、校園房間預約及教師當值生成產品；Christian Choi 以 Tech Consultant 身份提供技術架構、實作訓練與部署支援。",
   keywords: [
     "譚良蔚",
     "Sally Tam",
-    "設計與科技教師",
-    "資訊科技教師",
-    "STEAM 教育",
-    "STEM 教師",
-    "香港教師作品集",
-    "跨學科教學",
+    "Christian Choi",
+    "譚良蔚 Product Owner",
+    "Christian Choi Tech Consultant",
+    "NFC 梅記智能超市",
+    "教育科技 Product Owner",
+    "校園房間預約系統",
+    "教師當值生成系統",
   ],
-  authors: [{ name: "譚良蔚 Sally Tam" }],
+  authors: [
+    { name: "譚良蔚 Sally Tam", url: siteUrl },
+    { name: "Christian Choi", url: "https://christianchoi.com" },
+  ],
   creator: "譚良蔚",
-  publisher: "譚良蔚",
+  publisher: "譚良蔚 Sally Tam × Christian Choi",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -55,23 +59,29 @@ export const metadata: Metadata = {
     type: "website",
     locale: "zh_HK",
     url: siteUrl,
-    siteName: "譚良蔚 Sally Tam",
-    title: "譚良蔚 Sally Tam | 設計與科技及 STEAM 教師",
-    description: "以設計、科技與真實問題，建立讓學生主動探索的學習經驗。",
+    siteName: "譚良蔚 Sally Tam × Christian Choi",
+    title: "譚良蔚 Sally Tam｜教育科技 Product Owner × Christian Choi",
+    description:
+      "Sally Tam 主導教育科技產品，Christian Choi 以 Tech Consultant 身份支援產品架構、實作與落地。",
     images: [
       {
         url: ogImageUrl,
         width: 1200,
         height: 630,
-        alt: "譚良蔚 Sally Tam，設計與科技、資訊科技及 STEAM 教師",
+        alt: "譚良蔚 Sally Tam 教育科技 Product Owner 與 Tech Consultant Christian Choi 作品集",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "譚良蔚 Sally Tam",
-    description: "設計與科技、資訊科技及 STEAM 教師作品集。",
-    images: [{ url: ogImageUrl, alt: "譚良蔚 Sally Tam 教師作品集" }],
+    title: "譚良蔚 Sally Tam × Christian Choi",
+    description: "教育科技 Product Owner 與 Tech Consultant 產品作品集。",
+    images: [
+      {
+        url: ogImageUrl,
+        alt: "譚良蔚 Sally Tam 與 Christian Choi 教育科技產品作品集",
+      },
+    ],
   },
 };
 
@@ -87,9 +97,13 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
-      name: "譚良蔚 Sally Tam 教師作品集",
+      name: "譚良蔚 Sally Tam × Christian Choi 教育科技產品作品集",
       inLanguage: "zh-Hant-HK",
       publisher: { "@id": `${siteUrl}/#sally-tam` },
+      about: [
+        { "@id": `${siteUrl}/#sally-tam` },
+        { "@id": `${siteUrl}/#christian-choi` },
+      ],
     },
     {
       "@type": "Person",
@@ -104,7 +118,7 @@ const jsonLd = {
         height: 578,
       },
       email: "mailto:sallytlww@gmail.com",
-      jobTitle: "設計與科技及資訊科技教師",
+      jobTitle: "教育科技 Product Owner 及 STEAM 教師",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Hong Kong",
@@ -112,42 +126,44 @@ const jsonLd = {
       },
       knowsLanguage: ["zh-Hant-HK", "en-HK"],
       knowsAbout: [
+        "教育科技產品管理",
+        "校園數碼轉型",
         "設計與科技教育",
         "資訊科技教育",
         "STEAM 教育",
         "跨學科課程設計",
+        "NFC SmartMart",
         "Micro:bit",
         "Onshape",
-        "Python",
       ],
-      worksFor: {
-        "@type": "School",
-        name: "天主教慈幼會伍少梅中學",
+      colleague: { "@id": `${siteUrl}/#christian-choi` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#christian-choi`,
+      name: "Christian Choi",
+      url: "https://christianchoi.com",
+      jobTitle: "Tech Consultant and Software Engineer",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Hong Kong",
+        addressCountry: "HK",
       },
-      alumniOf: {
-        "@type": "CollegeOrUniversity",
-        "@id": "https://www.eduhk.hk/#organization",
-        name: "香港教育大學",
-        url: "https://www.eduhk.hk/",
-      },
-      hasCredential: [
-        {
-          "@type": "EducationalOccupationalCredential",
-          name: "學位教師教育文憑（中學）",
-          credentialCategory: "Postgraduate Diploma in Education",
-          recognizedBy: { "@id": "https://www.eduhk.hk/#organization" },
-        },
-        {
-          "@type": "EducationalOccupationalCredential",
-          name: "科學教育榮譽學士",
-          credentialCategory: "Bachelor's degree",
-          recognizedBy: { "@id": "https://www.eduhk.hk/#organization" },
-        },
+      knowsLanguage: ["zh-Hant-HK", "en-HK"],
+      knowsAbout: [
+        "Education Technology",
+        "Product Architecture",
+        "Web Development",
+        "NFC Integration",
+        "Next.js",
+        "Firebase",
+        "Technical Training",
+        "Cloud Deployment",
       ],
-      award: [
-        "2025 大灣區 STEAM 卓越獎十佳 STEAM 教師",
-        "2024 全球青少年創新設計與發明大賽編程設計組金獎",
-        "2024 教育局實地學習博覽創新方案銅獎及最受歡迎獎",
+      colleague: { "@id": `${siteUrl}/#sally-tam` },
+      sameAs: [
+        "https://christianchoi.com",
+        "https://www.linkedin.com/in/christian-choi-b26356207/",
       ],
     },
   ],

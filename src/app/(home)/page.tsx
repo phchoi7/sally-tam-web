@@ -11,16 +11,18 @@ import { siteUrl } from "@/lib/site-config";
 import { teachingProjects } from "@/lib/teaching-projects";
 
 export const metadata: Metadata = {
-  title: { absolute: "香港設計與科技及 STEAM 教師 | 譚良蔚 Sally Tam" },
+  title: {
+    absolute: "譚良蔚 Sally Tam｜教育科技 Product Owner × Christian Choi",
+  },
   description:
-    "香港設計與科技及 STEAM 教師譚良蔚的作品集，分享資訊科技、數學與跨學科課程設計，以及學生由研究、製作、測試到反思的創科學習成果。",
+    "譚良蔚 Sally Tam 主導 NFC 梅記智能超市、校園房間預約及教師當值生成產品；Christian Choi 以 Tech Consultant 身份支援架構、實作、訓練與部署。",
   alternates: { canonical: "/" },
 };
 
 const highlights = [
-  ["2025", "大灣區 STEAM 卓越獎", "十佳 STEAM 教師"],
-  ["2024", "全球青少年創新設計與發明大賽", "編程設計組金獎"],
-  ["2024", "教育局實地學習博覽", "創新方案銅獎及最受歡迎獎"],
+  ["2024/25", "香港理工大學 Fun-Tech 比賽", "創意 RFID 組冠軍"],
+  ["2025", "香港教育城學生創新大賽", "高中組季軍"],
+  ["2025", "IEEE TALE Macao", "K–12 國際展示與交流"],
 ];
 
 export default function HomePage() {
@@ -28,11 +30,15 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     "@id": `${siteUrl}/#profile-page`,
-    name: "譚良蔚教師作品集",
+    name: "譚良蔚 Sally Tam 與 Christian Choi 教育科技產品作品集",
     url: siteUrl,
     inLanguage: "zh-Hant-HK",
     isPartOf: { "@id": `${siteUrl}/#website` },
     mainEntity: { "@id": `${siteUrl}/#sally-tam` },
+    about: [
+      { "@id": `${siteUrl}/#sally-tam` },
+      { "@id": `${siteUrl}/#christian-choi` },
+    ],
   };
 
   return (
@@ -47,23 +53,26 @@ export default function HomePage() {
 
       <section className="hero section-shell">
         <div className="hero-copy">
-          <p className="eyebrow">Teacher portfolio</p>
+          <p className="eyebrow">Education technology product portfolio</p>
           <h1>
             譚良蔚 Sally Tam
             <br />
-            <span className="hero-role">香港設計與科技及 STEAM 教師</span>
+            <span className="hero-role">
+              教育科技 Product Owner × STEAM Educator
+            </span>
           </h1>
-          <p className="hero-statement">在動手創造中，讓學習變得真實。</p>
+          <p className="hero-statement">把校園需要，帶成真正可用的產品。</p>
           <p className="hero-intro">
-            譚良蔚是香港中學設計與科技及資訊科技教師，專注
-            STEAM、設計思維、編程與數據素養課程。她透過真實問題、原型製作及反思評估，協助學生把構思轉化成可以測試和解釋的作品。
+            譚良蔚 Sally Tam 由真實教育與校務需要出發，主導 NFC
+            梅記智能超市、校園房間預約與教師當值生成產品。Christian Choi 以 Tech
+            Consultant 身份提供技術架構、原型實作、能力訓練與部署支援。
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" href="/project">
-              瀏覽教學案例 <ArrowUpRight size={19} stroke={1.6} />
+              瀏覽產品案例 <ArrowUpRight size={19} stroke={1.6} />
             </Link>
             <Link className="text-link" href="/about">
-              認識我的教學歷程 <ArrowDown size={17} stroke={1.5} />
+              認識 Sally Tam <ArrowDown size={17} stroke={1.5} />
             </Link>
           </div>
         </div>
@@ -75,7 +84,7 @@ export default function HomePage() {
           </div>
           <Image
             src="/sally-tam-portrait.webp"
-            alt="設計與科技及 STEAM 教師譚良蔚"
+            alt="教育科技 Product Owner 譚良蔚 Sally Tam"
             width={476}
             height={578}
             priority
@@ -84,7 +93,7 @@ export default function HomePage() {
           />
           <p className="portrait-caption">
             譚良蔚 Sally Tam
-            <span>設計與科技及資訊科技教師</span>
+            <span>Education Technology Product Owner</span>
           </p>
         </div>
       </section>
@@ -94,46 +103,51 @@ export default function HomePage() {
         aria-labelledby="profile-summary-title"
       >
         <div>
-          <p className="eyebrow">Teaching profile</p>
-          <h2 id="profile-summary-title">譚良蔚老師是誰？</h2>
+          <p className="eyebrow">Product owner profile</p>
+          <h2 id="profile-summary-title">Sally Tam 如何把需要帶成產品？</h2>
         </div>
         <div className="profile-summary-copy">
           <p>
-            譚良蔚自 2022
-            年起於香港中學任教設計與科技、電腦及數學，並參與跨學科課程設計、未來人才培育及學生創科比賽。她持有香港教育大學學位教師教育文憑（中學）及科學教育榮譽學士學位。
+            Sally
+            同時理解教學現場與產品決策。她由使用者、營運限制與學習目標開始，整理問題、設定優先次序，再帶領團隊完成原型、測試、公開展示及校內落地。
           </p>
           <p>
-            她的教學由使用者需要與生活情境開始，引導學生研究問題、比較方案、建立原型、測試及說明改良理據。作品集所載案例呈現實際教學流程、學生學習成果與教師反思，讓課堂經驗可以被理解、討論及持續改善。
+            Christian Choi 負責把產品方向連接到可行技術方案，支援架構、網站與
+            NFC
+            整合、系統實作、技術訓練、除錯及部署。兩人的協作把教育構想轉化成可運作、可驗證及可持續改善的產品。
           </p>
           <p className="content-updated">資料最後更新：2026 年 8 月</p>
           <Link className="text-link" href="/about">
-            查看學歷、經歷與教學專長 <ArrowUpRight size={18} stroke={1.5} />
+            查看 Sally 的經歷與產品方法 <ArrowUpRight size={18} stroke={1.5} />
           </Link>
         </div>
       </section>
 
       <section className="belief section-shell">
         <Reveal className="belief-lead">
-          <p>我的教學相信</p>
-          <h2>每個學生都可以成為解難者。</h2>
+          <p>Product philosophy</p>
+          <h2>技術由需要開始，價值在落地中證明。</h2>
         </Reveal>
         <Reveal className="belief-body" delay={0.08}>
           <p>
-            從生活問題出發，以設計思維整理需要，再透過編程、建模與製作驗證想法。課堂不只是學習工具，更是建立好奇心、協作力與自信的地方。
+            每個產品先確認真正使用者、操作限制及成功條件，再以小步原型、真實測試與持續回饋降低風險。產品不以功能數量定義，而以能否被理解、採用及改善來衡量。
           </p>
-          <ul className="subject-list" aria-label="任教範疇">
-            <li>設計與科技</li>
-            <li>資訊科技</li>
-            <li>數學</li>
-            <li>STEAM</li>
+          <ul className="subject-list" aria-label="產品專長">
+            <li>Product Ownership</li>
+            <li>Education Technology</li>
+            <li>Technical Consulting</li>
+            <li>School Operations</li>
           </ul>
         </Reveal>
       </section>
 
       <section className="selected-work section-shell">
         <Reveal className="section-heading">
-          <h2>代表教學案例</h2>
-          <p>由課堂設計到公開比賽，記錄學生如何研究、製作、測試與分享。</p>
+          <h2>代表教育科技產品</h2>
+          <p>
+            Sally Tam 主導產品方向與落地，Christian Choi 支援技術架構與實作；由
+            NFC 社會創新走到校務流程數碼化。
+          </p>
         </Reveal>
         <div className="project-grid">
           {teachingProjects.slice(0, 3).map((project, index) => (
@@ -147,14 +161,14 @@ export default function HomePage() {
           ))}
         </div>
         <Link className="all-work-link" href="/project">
-          查看全部教學案例 <ArrowUpRight size={21} stroke={1.5} />
+          查看全部產品與案例 <ArrowUpRight size={21} stroke={1.5} />
         </Link>
       </section>
 
       <section className="recognition">
         <div className="section-shell recognition-inner">
           <Reveal>
-            <h2>專業肯定與學生成果</h2>
+            <h2>產品里程碑與公開成果</h2>
           </Reveal>
           <div className="recognition-list">
             {highlights.map(([year, title, result], index) => (
@@ -174,8 +188,8 @@ export default function HomePage() {
 
       <section className="home-cta section-shell">
         <Reveal>
-          <p>教育是一段共同建構的旅程。</p>
-          <h2>期待交流課程設計、創科教育與學生發展。</h2>
+          <p>Sally Tam × Christian Choi</p>
+          <h2>由教育問題定義，到可靠產品落地。</h2>
           <a
             className="button button-primary"
             href="mailto:sallytlww@gmail.com"
