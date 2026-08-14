@@ -209,6 +209,40 @@ img {
   font-size: clamp(1rem, 1.4vw, 1.2rem);
 }
 
+.hero-credential {
+  width: fit-content;
+  min-height: 48px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--forest) 42%, transparent);
+  background: color-mix(in srgb, var(--cream) 72%, transparent);
+  color: var(--forest-deep);
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.hero-credential:hover,
+.hero-credential:focus-visible {
+  border-color: var(--forest);
+  transform: translateY(-2px);
+}
+
+.hero-credential span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-credential strong {
+  font-size: 0.82rem;
+}
+
 .hero-actions {
   display: flex;
   align-items: center;
@@ -329,6 +363,77 @@ img {
   gap: clamp(3rem, 9vw, 9rem);
   padding-block: clamp(6rem, 10vw, 9rem);
   border-top: 1px solid var(--line);
+}
+
+.credential-evidence {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  align-items: center;
+  gap: clamp(2.5rem, 7vw, 7rem);
+  padding-block: clamp(5rem, 9vw, 8rem);
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 2rem;
+}
+
+.credential-evidence-copy h2,
+.about-credential h2 {
+  margin: 0;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(2.25rem, 4vw, 4rem);
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.credential-evidence-copy > p:not(.eyebrow) {
+  max-width: 610px;
+  margin: 1.2rem 0 0;
+  color: #3f4b44;
+}
+
+.credential-evidence-copy dl {
+  display: grid;
+  grid-template-columns: 1.5fr 0.7fr;
+  gap: 1px;
+  margin: 2rem 0;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.credential-fact {
+  padding: 1rem;
+  background: var(--cream);
+}
+
+.credential-evidence-copy dt {
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.credential-evidence-copy dd {
+  margin: 0.35rem 0 0;
+  color: var(--forest-deep);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.credential-certificate {
+  padding: clamp(0.7rem, 1.3vw, 1rem);
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: 0 22px 70px
+    color-mix(in srgb, var(--forest-deep) 12%, transparent);
+}
+
+.credential-certificate img {
+  width: 100%;
+  height: auto;
+}
+
+.credential-certificate p {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  font-size: 0.7rem;
 }
 
 .profile-summary h2 {
@@ -1452,6 +1557,42 @@ img {
   padding-block: clamp(7rem, 12vw, 11rem);
 }
 
+.about-credential {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(2.5rem, 7vw, 7rem);
+  margin-top: clamp(5rem, 9vw, 8rem);
+  padding-block: clamp(4rem, 7vw, 6rem);
+  border-block: 1px solid var(--line);
+  scroll-margin-top: 2rem;
+}
+
+.about-credential-image {
+  padding: 0.8rem;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.about-credential-image img {
+  width: 100%;
+  height: auto;
+}
+
+.about-credential-copy strong {
+  display: block;
+  margin-top: 1.4rem;
+  color: var(--forest);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.about-credential-copy > p:last-child {
+  max-width: 560px;
+  margin: 1.2rem 0 0;
+  color: var(--muted);
+}
+
 .about-capabilities h2,
 .timeline-section > h2,
 .training-section h2 {
@@ -1800,6 +1941,7 @@ img {
 
   .belief,
   .profile-summary,
+  .credential-evidence,
   .project-framework,
   .project-grid,
   .page-intro,
@@ -1807,17 +1949,20 @@ img {
   .case-challenge,
   .case-reflection,
   .about-hero,
+  .about-credential,
   .contact-page {
     grid-template-columns: 1fr;
   }
 
   .belief,
   .profile-summary,
+  .credential-evidence,
   .project-framework,
   .page-intro,
   .case-challenge,
   .case-reflection,
   .about-hero,
+  .about-credential,
   .contact-page {
     gap: 2.5rem;
   }
@@ -1957,6 +2102,18 @@ img {
   }
 
   .training-section ul {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-credential {
+    grid-template-columns: 1fr auto;
+  }
+
+  .hero-credential span {
+    grid-column: 1 / -1;
+  }
+
+  .credential-evidence-copy dl {
     grid-template-columns: 1fr;
   }
 

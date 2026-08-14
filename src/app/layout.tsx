@@ -14,12 +14,16 @@ export const metadata: Metadata = {
     template: "%s｜譚良蔚 Sally Tam",
   },
   description:
-    "譚良蔚 Sally Tam 的教育專業作品集，記錄 NFC 梅記智能超市、校園房間預約及教師當值生成系統，展現資訊及通訊科技教育、STEAM 教學與校本數字教育實踐。",
+    "譚良蔚 Sally Tam 是 Google Gemini Certified Educator，作品集記錄 AI 教育、資訊及通訊科技、STEAM、NFC 梅記智能超市與校本數字教育實踐。",
   keywords: [
     "譚良蔚",
     "Sally Tam",
     "譚良蔚老師",
     "Sally Tam ICT teacher",
+    "Google Gemini Certified Educator",
+    "Google AI 教育者",
+    "AI 教學",
+    "人工智能教育",
     "NFC 梅記智能超市",
     "資訊及通訊科技教育",
     "DSE 資訊及通訊科技教學",
@@ -59,9 +63,9 @@ export const metadata: Metadata = {
     locale: "zh_HK",
     url: siteUrl,
     siteName: "譚良蔚 Sally Tam 教育專業作品集",
-    title: "譚良蔚 Sally Tam｜資訊及通訊科技教育",
+    title: "譚良蔚 Sally Tam｜Google AI 認證教育者與資訊科技教育",
     description:
-      "由真實教育與校務需要出發，記錄 Sally Tam 的資訊及通訊科技教育、STEAM 教學與校本數字教育實踐。",
+      "Google Gemini Certified Educator 譚良蔚 Sally Tam 的 AI 教育、資訊及通訊科技、STEAM 教學與校本數字教育實踐。",
     images: [
       {
         url: ogImageUrl,
@@ -73,8 +77,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "譚良蔚 Sally Tam｜資訊及通訊科技教育",
-    description: "Sally Tam 的教育專業、STEAM 教學與校本數字教育作品集。",
+    title: "譚良蔚 Sally Tam｜Google AI 認證教育者",
+    description:
+      "Sally Tam 的 AI 教育、資訊及通訊科技、STEAM 教學與校本數字教育作品集。",
     images: [
       {
         url: ogImageUrl,
@@ -115,6 +120,16 @@ const jsonLd = {
       },
       email: "mailto:sallytlww@gmail.com",
       jobTitle: "資訊及通訊科技、設計與科技及 STEAM 教師",
+      hasCredential: {
+        "@type": "EducationalOccupationalCredential",
+        name: "Gemini Certified Educator",
+        credentialCategory: "Professional certification",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "Google for Education",
+        },
+        validFor: "P3Y",
+      },
       address: {
         "@type": "PostalAddress",
         addressLocality: "Hong Kong",
@@ -123,6 +138,8 @@ const jsonLd = {
       knowsLanguage: ["zh-Hant-HK", "en-HK"],
       knowsAbout: [
         "資訊及通訊科技教育",
+        "Google AI 教育應用",
+        "人工智能教育與數字素養",
         "香港中學文憑資訊及通訊科技",
         "校園數碼轉型",
         "設計與科技教育",

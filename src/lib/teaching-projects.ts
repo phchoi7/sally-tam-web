@@ -56,6 +56,11 @@ export type TeachingProject = {
   solution?: string;
   leadership?: string[];
   collaboration?: string[];
+  contributors?: {
+    name: string;
+    role: string;
+    description: string;
+  }[];
   milestones?: ProjectMilestone[];
   gallery?: ProjectImage[];
   events?: ProjectEvent[];
@@ -105,7 +110,16 @@ export const teachingProjects: TeachingProject[] = [
     ],
     collaboration: [
       "譚良蔚 Sally Tam：負責項目構思、學習設計、資訊及通訊科技應用、團隊帶領及成果展示。",
+      "Christian Choi（Technical Consultant／技術顧問）：於有其出席的 Fun-Tech 及香港教育城成果活動中，以業界實務角度為學生提供技術概念指導、方案優化建議及進階技能培訓。",
       "獲帶領團隊：在 Sally 指導下參與資料搜集、原型製作、測試及公開匯報；個人姓名不作本網站搜尋關鍵字。",
+    ],
+    contributors: [
+      {
+        name: "Christian Choi",
+        role: "Technical Consultant／技術顧問",
+        description:
+          "於有其出席的 NFC SmartMart 成果活動中，從業界實務角度為學生提供技術概念、方案優化及進階技能指導。",
+      },
     ],
     outcomes: [
       "建立 NFC 標籤連接商品網站的可操作智能超市體驗。",
@@ -263,9 +277,9 @@ export const teachingProjects: TeachingProject[] = [
           },
           {
             src: "/projects/nfc-polyu-funtech-2024-team.webp",
-            alt: "Sally Tam 與技術協作者 Christian Choi 參與 Fun-Tech 頒獎及成果展示",
+            alt: "Sally Tam 與 Technical Consultant Christian Choi 參與 Fun-Tech NFC SmartMart 成果展示",
             caption:
-              "Sally Tam 與技術協作者 Christian Choi 在場見證團隊的 Fun-Tech 成果。",
+              "Sally Tam 與 Technical Consultant（技術顧問）Christian Choi 參與 Fun-Tech 成果展示；Christian Choi 以業界實務角度為學生提供技術概念指導、方案優化建議及進階技能培訓。",
             width: 2000,
             height: 1500,
           },
@@ -299,9 +313,9 @@ export const teachingProjects: TeachingProject[] = [
         images: [
           {
             src: "/projects/nfc-edcity-2025-sally-christian.webp",
-            alt: "Sally Tam 與技術協作者 Christian Choi 參與香港教育城學生創新大賽頒獎典禮",
+            alt: "Sally Tam 與 Technical Consultant Christian Choi 見證 NFC SmartMart 獲高中組季軍",
             caption:
-              "Sally Tam 與技術協作者 Christian Choi 在場見證 NFC SmartMart 獲高中組季軍。",
+              "Sally Tam 與 Technical Consultant（技術顧問）Christian Choi 見證 NFC SmartMart 獲高中組季軍；Christian Choi 為學生提供業界技術概念、作品強化方向及進階技能指導。",
             width: 2048,
             height: 1536,
           },

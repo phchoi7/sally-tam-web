@@ -5,9 +5,9 @@ import { Reveal } from "@/components/site/reveal";
 import { siteUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "關於 Sally Tam｜資訊及通訊科技教育與 STEAM 教學",
+  title: "關於 Sally Tam｜Google AI 認證、資訊科技與 STEAM 教學",
   description:
-    "認識譚良蔚 Sally Tam 的教育專業歷程、資訊及通訊科技教育、設計與科技、STEAM 教學及校本數字教育實踐。",
+    "認識譚良蔚 Sally Tam 的 Google Gemini Certified Educator 專業認證、AI 教育、資訊及通訊科技、STEAM 教學與校本數字教育實踐。",
   alternates: { canonical: "/about" },
   openGraph: { url: `${siteUrl}/about` },
 };
@@ -45,7 +45,8 @@ const training = [
   "Autodesk Fusion 360 入門證書課程",
   "聖約翰救傷會急救證書課程",
   "CODING101 STEM 導師培訓證書計劃",
-  "人工智能（AI）素養課程",
+  "Google Gemini Certified Educator 專業認證",
+  "人工智能（AI）素養與負責任應用",
   "共融校園及特殊教育需要課程",
 ];
 
@@ -85,9 +86,35 @@ export default function AboutPage() {
           alt="資訊及通訊科技教育工作者譚良蔚 Sally Tam 肖像"
           width={476}
           height={578}
+          priority
           sizes="(max-width: 800px) 70vw, 32vw"
         />
       </header>
+
+      <section
+        className="about-credential"
+        id="google-ai-credential"
+        aria-labelledby="about-google-ai-title"
+      >
+        <Reveal className="about-credential-image">
+          <Image
+            src="/credentials/sally-tam-google-gemini-certified-educator.webp"
+            alt="譚良蔚 Sally Tam 獲 Google for Education Gemini Certified Educator 專業認證"
+            width={1400}
+            height={1002}
+            sizes="(max-width: 800px) 100vw, 50vw"
+          />
+        </Reveal>
+        <Reveal className="about-credential-copy" delay={0.06}>
+          <p className="eyebrow">Google AI education credential</p>
+          <h2 id="about-google-ai-title">Gemini Certified Educator</h2>
+          <strong>Google for Education 專業認證 · 2025–2028</strong>
+          <p>
+            Sally Tam 具備在教育情境運用 Google AI
+            的知識、技能與基本能力，並以教學目標、資訊判斷、數字素養及負責任使用為原則，把人工智能融入課堂與學習設計。
+          </p>
+        </Reveal>
+      </section>
 
       <section className="about-capabilities">
         <Reveal>
@@ -107,8 +134,11 @@ export default function AboutPage() {
             <p>探究問題、實作任務、原型測試、協作學習及成果展示。</p>
           </Reveal>
           <Reveal delay={0.15}>
-            <h3>教學實踐與反思</h3>
-            <p>公開比賽、國際交流、校內實際使用及持續改良。</p>
+            <h3>AI 教育與數字素養</h3>
+            <p>
+              Google AI
+              教育應用、資訊判斷、負責任使用及以學習目標為本的課堂設計。
+            </p>
           </Reveal>
         </div>
       </section>

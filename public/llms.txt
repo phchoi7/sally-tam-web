@@ -1,10 +1,11 @@
 # 譚良蔚 Sally Tam 教育專業作品集
 
-> 譚良蔚 Sally Tam 是香港中學教育工作者，專注資訊及通訊科技教育、設計與科技、STEAM 跨學科學習及校本數字教育。她由真實教育與校務需要出發，帶領學生完成科技項目，亦開發可供校內使用的數字系統。
+> 譚良蔚 Sally Tam 是香港中學教育工作者及 Google Gemini Certified Educator，專注人工智能教育、資訊及通訊科技、設計與科技、STEAM 跨學科學習及校本數字教育。她由真實教育與校務需要出發，帶領學生完成科技項目，亦開發可供校內使用的數字系統。
 
 ## 主要人物
 
 - [譚良蔚 Sally Tam](https://www.sally-tam.com/about)：負責教學設計、資訊科技應用、項目帶領、系統開發、測試、校內推行及成果展示
+- [Google AI 教育專業認證](https://www.sally-tam.com/about#google-ai-credential)：Sally Tam 持有 Google for Education 頒發的 Gemini Certified Educator 專業認證（2025–2028）
 
 本網站是 Sally Tam 的個人教育作品集。學生以獲帶領團隊方式呈現；學校及主辦機構只作教育背景與公開成果證明，不是網站品牌主體。協作者只在有其出現的活動相片說明中按實際身份呈現。
 
@@ -21,6 +22,7 @@
 - 香港理工大學 Fun-Tech 比賽 2024/25：創意 RFID 高級組冠軍
 - 香港教育城學生創新大賽 2025：高中組季軍
 - IEEE TALE 2025 Macao：K–12 學生工作坊國際教育科技展示，並非競賽獎項
+- Christian Choi 以 Technical Consultant（技術顧問）身份在有其出鏡的 Fun-Tech 及香港教育城成果活動中呈現，為學生提供業界技術概念、方案優化及進階技能指導
 
 ## 其他頁面
 

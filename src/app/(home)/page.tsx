@@ -12,10 +12,10 @@ import { teachingProjects } from "@/lib/teaching-projects";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "譚良蔚 Sally Tam｜資訊及通訊科技教育與校本數字教育",
+    absolute: "譚良蔚 Sally Tam｜Google AI 認證教育者與資訊科技教育",
   },
   description:
-    "譚良蔚 Sally Tam 的教育專業作品集，記錄 NFC 梅記智能超市、校園房間預約及教師當值生成系統，展現資訊及通訊科技、STEAM 與數字教育實踐。",
+    "譚良蔚 Sally Tam 是 Google Gemini Certified Educator，作品集記錄 AI 教育、資訊及通訊科技、STEAM、NFC 梅記智能超市與校本數字教育實踐。",
   alternates: { canonical: "/" },
 };
 
@@ -50,12 +50,12 @@ export default function HomePage() {
 
       <section className="hero section-shell">
         <div className="hero-copy">
-          <p className="eyebrow">ICT Education · STEAM · Digital Education</p>
+          <p className="eyebrow">Google AI Certified Education · ICT · STEAM</p>
           <h1>
             譚良蔚 Sally Tam
             <br />
             <span className="hero-role">
-              資訊及通訊科技教育 × STEAM 教學實踐
+              Google AI 認證教育者 × 資訊科技 × STEAM 教學
             </span>
           </h1>
           <p className="hero-statement">
@@ -65,6 +65,15 @@ export default function HomePage() {
             譚良蔚 Sally Tam 由真實教育與校務需要出發，主導 NFC
             梅記智能超市，並開發校園房間預約與教師當值生成系統，將資訊及通訊科技、數字教育與校本實踐連結起來。
           </p>
+          <Link
+            className="hero-credential"
+            href="#google-ai-credential"
+            aria-label="查看 Sally Tam 的 Google Gemini Certified Educator 專業認證"
+          >
+            <span>Google for Education</span>
+            <strong>Gemini Certified Educator</strong>
+            <ArrowDown aria-hidden size={17} stroke={1.5} />
+          </Link>
           <div className="hero-actions">
             <Link className="button button-primary" href="/project">
               瀏覽教育實踐案例 <ArrowUpRight size={19} stroke={1.6} />
@@ -91,9 +100,57 @@ export default function HomePage() {
           />
           <p className="portrait-caption">
             譚良蔚 Sally Tam
-            <span>ICT Education · STEAM · School-based Innovation</span>
+            <span>Gemini Certified Educator · ICT Education · STEAM</span>
           </p>
         </div>
+      </section>
+
+      <section
+        className="credential-evidence section-shell"
+        id="google-ai-credential"
+        aria-labelledby="google-ai-credential-title"
+      >
+        <Reveal className="credential-evidence-copy">
+          <p className="eyebrow">AI education credential</p>
+          <h2 id="google-ai-credential-title">
+            Google 認證 AI 教育者，回應學與教需要。
+          </h2>
+          <p>
+            譚良蔚 Sally Tam 已取得 Google for Education 頒發的 Gemini Certified
+            Educator 專業資格，證明具備在教育情境運用 Google AI
+            所需的知識、技能與基本能力。
+          </p>
+          <p>
+            她重視負責任、具學習目的及以教師判斷為本的人工智能應用，將 AI
+            素養連結課堂設計、資訊評估、創意解難與學生學習。
+          </p>
+          <dl>
+            <div className="credential-fact">
+              <dt>專業認證</dt>
+              <dd>Google Gemini Certified Educator</dd>
+            </div>
+            <div className="credential-fact">
+              <dt>有效期</dt>
+              <dd>2025–2028</dd>
+            </div>
+          </dl>
+          <Link className="text-link" href="/about#google-ai-credential">
+            查看 Sally 的 AI 教育專業資歷
+            <ArrowUpRight aria-hidden size={18} stroke={1.5} />
+          </Link>
+        </Reveal>
+        <Reveal className="credential-certificate" delay={0.08}>
+          <Image
+            src="/credentials/sally-tam-google-gemini-certified-educator.webp"
+            alt="Google for Education 頒發予譚良蔚 Sally Tam 的 Gemini Certified Educator 證書"
+            width={1400}
+            height={1002}
+            sizes="(max-width: 800px) 100vw, 52vw"
+          />
+          <p>
+            Google Gemini Certified Educator · Leung Wai Tam（譚良蔚 Sally Tam）
+          </p>
+        </Reveal>
       </section>
 
       <section

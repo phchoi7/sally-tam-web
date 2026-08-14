@@ -50,6 +50,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "校本數字教育",
       project.title,
       ...project.tools,
+      ...(project.contributors?.flatMap((contributor) => [
+        contributor.name,
+        contributor.role,
+      ]) ?? []),
     ],
     authors: [{ name: "譚良蔚 Sally Tam", url: siteUrl }],
     alternates: { canonical: `/project/${project.slug}` },
@@ -112,6 +116,12 @@ export default async function ProjectDetailPage({ params }: Props) {
           ...project.tools,
         ],
         creator: { "@id": `${siteUrl}/#sally-tam` },
+        contributor: project.contributors?.map((contributor) => ({
+          "@type": "Person",
+          name: contributor.name,
+          jobTitle: contributor.role,
+          description: contributor.description,
+        })),
         isPartOf: { "@id": `${siteUrl}/#website` },
         image:
           project.gallery?.map((item) => `${siteUrl}${item.src}`) ?? ogImageUrl,
