@@ -624,12 +624,11 @@ export const teachingProjects: TeachingProject[] = [
         height: 633,
       },
     ],
-    productUrl: "https://schooltime-4yyc3kfs.manus.space/",
     privacyNote:
       "為保障教師及校務資料，本案例截圖只展示系統介面、匯總數字及 Sally Tam 本人示例，不公開其他教師姓名、個人時間表或完整內部編排資料。",
     reflection:
       "流程自動化不是取消人的判斷，而是把重複整理交給系統，讓行政人員把時間放在規則、例外與溝通。系統成效應以實際使用、可覆核性與持續改善衡量。",
-    updatedAt: "2026-08-14",
+    updatedAt: "2026-08-15",
   },
   {
     slug: "qef-cross-disciplinary-design",
