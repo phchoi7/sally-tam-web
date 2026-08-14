@@ -1310,6 +1310,13 @@ img {
   background: var(--cream);
 }
 
+.case-study.project-green .case-gallery img {
+  height: auto;
+  max-height: 620px;
+  object-fit: contain;
+  border: 1px solid var(--line);
+}
+
 .case-links {
   display: grid;
   grid-template-columns: 0.45fr 1.3fr;
