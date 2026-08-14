@@ -11,9 +11,9 @@ import { siteUrl } from "@/lib/site-config";
 import { teachingProjects } from "@/lib/teaching-projects";
 
 export const metadata: Metadata = {
-  title: { absolute: "譚良蔚 Sally Tam | 設計與科技及 STEAM 教師" },
+  title: { absolute: "香港設計與科技及 STEAM 教師 | 譚良蔚 Sally Tam" },
   description:
-    "譚良蔚的教師作品集，呈現設計與科技、資訊科技、STEAM 課程設計、學生創科項目與教學理念。",
+    "香港設計與科技及 STEAM 教師譚良蔚的作品集，分享資訊科技、數學與跨學科課程設計，以及學生由研究、製作、測試到反思的創科學習成果。",
   alternates: { canonical: "/" },
 };
 
@@ -27,14 +27,12 @@ export default function HomePage() {
   const webpageJsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
+    "@id": `${siteUrl}/#profile-page`,
     name: "譚良蔚教師作品集",
     url: siteUrl,
-    mainEntity: {
-      "@type": "Person",
-      name: "譚良蔚",
-      alternateName: "Sally Tam",
-      jobTitle: "設計與科技及資訊科技教師",
-    },
+    inLanguage: "zh-Hant-HK",
+    isPartOf: { "@id": `${siteUrl}/#website` },
+    mainEntity: { "@id": `${siteUrl}/#sally-tam` },
   };
 
   return (
@@ -51,13 +49,14 @@ export default function HomePage() {
         <div className="hero-copy">
           <p className="eyebrow">Teacher portfolio</p>
           <h1>
-            在動手創造中，
+            譚良蔚 Sally Tam
             <br />
-            讓學習變得真實。
+            <span className="hero-role">香港設計與科技及 STEAM 教師</span>
           </h1>
+          <p className="hero-statement">在動手創造中，讓學習變得真實。</p>
           <p className="hero-intro">
-            我是譚良蔚，專注設計與科技、資訊科技及 STEAM
-            教育，陪伴學生把想法變成可以測試的作品。
+            譚良蔚是香港中學設計與科技及資訊科技教師，專注
+            STEAM、設計思維、編程與數據素養課程。她透過真實問題、原型製作及反思評估，協助學生把構思轉化成可以測試和解釋的作品。
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" href="/project">
@@ -75,10 +74,10 @@ export default function HomePage() {
             <span>STEAM</span>
           </div>
           <Image
-            src="/sally-tam-portrait.png"
+            src="/sally-tam-portrait.webp"
             alt="設計與科技及 STEAM 教師譚良蔚"
-            width={690}
-            height={930}
+            width={476}
+            height={578}
             priority
             sizes="(max-width: 800px) 78vw, 38vw"
             className="hero-portrait"
@@ -87,6 +86,29 @@ export default function HomePage() {
             譚良蔚 Sally Tam
             <span>設計與科技及資訊科技教師</span>
           </p>
+        </div>
+      </section>
+
+      <section
+        className="profile-summary section-shell"
+        aria-labelledby="profile-summary-title"
+      >
+        <div>
+          <p className="eyebrow">Teaching profile</p>
+          <h2 id="profile-summary-title">譚良蔚老師是誰？</h2>
+        </div>
+        <div className="profile-summary-copy">
+          <p>
+            譚良蔚自 2022
+            年起於香港中學任教設計與科技、電腦及數學，並參與跨學科課程設計、未來人才培育及學生創科比賽。她持有香港教育大學學位教師教育文憑（中學）及科學教育榮譽學士學位。
+          </p>
+          <p>
+            她的教學由使用者需要與生活情境開始，引導學生研究問題、比較方案、建立原型、測試及說明改良理據。作品集所載案例呈現實際教學流程、學生學習成果與教師反思，讓課堂經驗可以被理解、討論及持續改善。
+          </p>
+          <p className="content-updated">資料最後更新：2026 年 8 月</p>
+          <Link className="text-link" href="/about">
+            查看學歷、經歷與教學專長 <ArrowUpRight size={18} stroke={1.5} />
+          </Link>
         </div>
       </section>
 

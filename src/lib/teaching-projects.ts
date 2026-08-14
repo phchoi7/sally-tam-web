@@ -12,6 +12,7 @@ export type TeachingProject = {
   approach: string[];
   outcomes: string[];
   reflection: string;
+  updatedAt: string;
 };
 
 export const teachingProjects: TeachingProject[] = [
@@ -40,6 +41,7 @@ export const teachingProjects: TeachingProject[] = [
     ],
     reflection:
       "好的製作課不以成品為終點。當學生能指出問題、比較方案並解釋改良方向，設計學習才真正發生。",
+    updatedAt: "2026-08-14",
   },
   {
     slug: "health-management-innovation",
@@ -66,6 +68,7 @@ export const teachingProjects: TeachingProject[] = [
     ],
     reflection:
       "比賽成績是鼓勵，最重要的成果是學生懂得先聆聽需要，再運用科技提出有根據的回應。",
+    updatedAt: "2026-08-14",
   },
   {
     slug: "youth-innovation-programming",
@@ -91,6 +94,7 @@ export const teachingProjects: TeachingProject[] = [
     ],
     reflection:
       "編程教育的核心不是記住語法，而是把問題拆細、驗證想法，並在錯誤中建立更好的解法。",
+    updatedAt: "2026-08-14",
   },
   {
     slug: "open-data-application",
@@ -117,6 +121,7 @@ export const teachingProjects: TeachingProject[] = [
     ],
     reflection:
       "數據素養與設計能力互相補足。學生既要問數字代表甚麼，也要問方案真正幫助了誰。",
+    updatedAt: "2026-08-14",
   },
 ];
 

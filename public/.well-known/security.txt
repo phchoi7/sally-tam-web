@@ -1,0 +1,4 @@
+Contact: mailto:sallytlww@gmail.com
+Expires: 2027-08-14T15:59:00Z
+Canonical: https://www.sally-tam.com/.well-known/security.txt
+Preferred-Languages: zh, en

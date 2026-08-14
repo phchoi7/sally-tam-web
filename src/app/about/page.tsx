@@ -2,12 +2,14 @@ import { IconArrowUpRight as ArrowUpRight } from "@tabler/icons-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Reveal } from "@/components/site/reveal";
+import { siteUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "關於我",
+  title: "香港設計與科技教師的教學理念與專業經歷",
   description:
-    "認識譚良蔚的教學理念、學歷、專業培訓，以及設計與科技、資訊科技及 STEAM 教學經驗。",
+    "認識香港教師譚良蔚的教學理念、香港教育大學學歷、專業培訓及前線經驗；了解她如何以設計思維、編程與製作連結設計與科技、資訊科技及 STEAM 學習。",
   alternates: { canonical: "/about" },
+  openGraph: { url: `${siteUrl}/about` },
 };
 
 const timeline = [
@@ -48,8 +50,26 @@ const training = [
 ];
 
 export default function AboutPage() {
+  const aboutJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${siteUrl}/about#profile-page`,
+    name: "關於譚良蔚",
+    url: `${siteUrl}/about`,
+    inLanguage: "zh-Hant-HK",
+    isPartOf: { "@id": `${siteUrl}/#website` },
+    mainEntity: { "@id": `${siteUrl}/#sally-tam` },
+  };
+
   return (
     <div className="page-shell section-shell">
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: Static trusted JSON-LD.
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aboutJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <header className="about-hero">
         <div>
           <p className="eyebrow">About Sally</p>
@@ -59,10 +79,10 @@ export default function AboutPage() {
           </p>
         </div>
         <Image
-          src="/sally-tam-portrait.png"
-          alt="譚良蔚老師"
-          width={460}
-          height={620}
+          src="/sally-tam-portrait.webp"
+          alt="香港設計與科技及 STEAM 教師譚良蔚肖像"
+          width={476}
+          height={578}
           sizes="(max-width: 800px) 70vw, 32vw"
         />
       </header>

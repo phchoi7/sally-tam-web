@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "私隱政策",
+  description:
+    "了解 sally-tam.com 如何使用 Vercel 網站分析及速度數據，以及處理訪客主動提供的電郵聯絡資料。",
+  alternates: { canonical: "/privacy-policy" },
+  openGraph: { url: "/privacy-policy" },
   robots: { index: false, follow: true },
 };
 
@@ -14,7 +18,9 @@ export default function PrivacyPage() {
       </p>
       <h2>網站分析</h2>
       <p>
-        網站可能使用私隱友善的基本瀏覽統計，以了解頁面表現。統計資料不會用作辨識個別訪客。
+        本網站使用 Vercel Analytics 及 Speed
+        Insights，收集匯總的頁面瀏覽、裝置及網站效能資料，以了解內容使用情況及改善載入速度。網站擁有人不會利用這些資料識別個別訪客；資料處理亦受
+        Vercel 的私隱政策約束。
       </p>
       <h2>聯絡</h2>
       <p>

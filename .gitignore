@@ -12,4 +12,5 @@ tmp/
 *.tsbuildinfo
 .DS_Store
 .vercel
+.seo-cache/
 .env*

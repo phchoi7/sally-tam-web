@@ -5,7 +5,7 @@ import {
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { siteUrl } from "@/lib/site-config";
+import { ogImageUrl, siteUrl } from "@/lib/site-config";
 import { getTeachingProject, teachingProjects } from "@/lib/teaching-projects";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return {};
 
   return {
-    title: project.title,
+    title: `${project.title}｜香港 STEAM 教學案例`,
     description: project.summary,
     alternates: { canonical: `/project/${project.slug}` },
     openGraph: {
@@ -28,6 +28,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: project.summary,
       url: `${siteUrl}/project/${project.slug}`,
       type: "article",
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${project.title}教學案例`,
+        },
+      ],
     },
   };
 }
@@ -39,16 +47,47 @@ export default async function ProjectDetailPage({ params }: Props) {
   const index = teachingProjects.findIndex((item) => item.slug === slug);
   const nextProject = teachingProjects[(index + 1) % teachingProjects.length];
 
+  const projectUrl = `${siteUrl}/project/${project.slug}`;
   const projectJsonLd = {
     "@context": "https://schema.org",
-    "@type": "LearningResource",
-    name: project.title,
-    alternateName: project.titleEn,
-    description: project.summary,
-    educationalLevel: project.audience,
-    learningResourceType: "教學案例",
-    author: { "@type": "Person", name: "譚良蔚" },
-    url: `${siteUrl}/project/${project.slug}`,
+    "@graph": [
+      {
+        "@type": "LearningResource",
+        "@id": `${projectUrl}#learning-resource`,
+        name: project.title,
+        alternateName: project.titleEn,
+        description: project.summary,
+        url: projectUrl,
+        inLanguage: "zh-Hant-HK",
+        dateModified: project.updatedAt,
+        educationalLevel: project.audience,
+        learningResourceType: "教學案例",
+        keywords: project.tools,
+        about: project.tools.map((name) => ({ "@type": "Thing", name })),
+        author: { "@id": `${siteUrl}/#sally-tam` },
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        image: ogImageUrl,
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${projectUrl}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "首頁", item: siteUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "教學案例",
+            item: `${siteUrl}/project`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: project.title,
+            item: projectUrl,
+          },
+        ],
+      },
+    ],
   };
 
   return (
@@ -127,6 +166,13 @@ export default async function ProjectDetailPage({ params }: Props) {
           <p>教師反思</p>
           <blockquote>{project.reflection}</blockquote>
         </section>
+        <footer className="case-byline">
+          <p>
+            案例整理：<Link href="/about">譚良蔚 Sally Tam</Link>
+            ，香港設計與科技及資訊科技教師
+          </p>
+          <p>最後更新：2026 年 8 月 14 日</p>
+        </footer>
       </div>
 
       <Link

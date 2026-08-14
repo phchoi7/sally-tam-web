@@ -1,23 +1,9 @@
-const DEFAULT_SITE_URL = "https://sallytam.hk";
-
-function normalizeSiteUrl(rawUrl: string): string {
-  const candidate = rawUrl.startsWith("http") ? rawUrl : `https://${rawUrl}`;
-  try {
-    const parsed = new URL(candidate);
-    parsed.pathname = "/";
-    parsed.search = "";
-    parsed.hash = "";
-    return parsed.toString().replace(/\/$/, "");
-  } catch {
-    return DEFAULT_SITE_URL;
-  }
-}
-
-export const siteUrl = normalizeSiteUrl(
-  process.env.NEXT_PUBLIC_SITE_URL ?? process.env.SITE_URL ?? DEFAULT_SITE_URL,
-);
+// This portfolio has one public, canonical origin. Do not derive it from a
+// Vercel deployment hostname: preview/production aliases must all point search
+// engines back to the custom domain.
+export const siteUrl = "https://www.sally-tam.com";
 export const siteHost = new URL(siteUrl).host;
-export const ogImageUrl = `${siteUrl}/og.png`;
+export const ogImageUrl = `${siteUrl}/og.jpg`;
 
 // Compatibility exports retained while the downloaded template's unused routes
 // are phased out.

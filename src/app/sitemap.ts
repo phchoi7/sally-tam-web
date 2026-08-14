@@ -4,29 +4,31 @@ import { teachingProjects } from "@/lib/teaching-projects";
 
 export const dynamic = "force-static";
 
+const contentUpdatedAt = new Date("2026-08-14");
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: siteUrl,
-      lastModified: new Date("2026-07-28"),
+      lastModified: contentUpdatedAt,
       changeFrequency: "monthly",
       priority: 1,
     },
     {
       url: `${siteUrl}/project`,
-      lastModified: new Date("2026-07-28"),
+      lastModified: contentUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${siteUrl}/about`,
-      lastModified: new Date("2026-07-28"),
+      lastModified: contentUpdatedAt,
       changeFrequency: "yearly",
       priority: 0.8,
     },
     {
       url: `${siteUrl}/contact`,
-      lastModified: new Date("2026-07-28"),
+      lastModified: contentUpdatedAt,
       changeFrequency: "yearly",
       priority: 0.6,
     },
@@ -36,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticPages,
     ...teachingProjects.map((project) => ({
       url: `${siteUrl}/project/${project.slug}`,
-      lastModified: new Date("2026-07-28"),
+      lastModified: new Date(project.updatedAt),
       changeFrequency: "yearly" as const,
       priority: 0.8,
     })),

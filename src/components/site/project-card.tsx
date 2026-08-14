@@ -27,6 +27,10 @@ export function ProjectCard({
         <p>{project.year}</p>
         <h3>{project.title}</h3>
         <span>{project.titleEn}</span>
+        <p className="project-card-summary">{project.summary}</p>
+        <span className="project-card-audience">
+          {project.audience} · {project.tools.slice(0, 3).join("、")}
+        </span>
       </div>
     </Link>
   );
