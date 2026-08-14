@@ -2,7 +2,7 @@ import { IconArrowUpRight as ArrowUpRight } from "@tabler/icons-react";
 import Link from "next/link";
 
 const links = [
-  { href: "/project", label: "產品案例" },
+  { href: "/project", label: "實踐案例" },
   { href: "/about", label: "關於我" },
   { href: "/contact", label: "聯絡" },
 ];

@@ -5,9 +5,9 @@ import { Reveal } from "@/components/site/reveal";
 import { siteUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Sally Tam 產品帶領方法與 Christian Choi 技術顧問協作",
+  title: "關於 Sally Tam｜資訊及通訊科技教育與 STEAM 教學",
   description:
-    "認識譚良蔚 Sally Tam 的教育科技 Product Owner 經歷，以及她如何與 Tech Consultant Christian Choi 協作，把教育需要轉化成可落地產品。",
+    "認識譚良蔚 Sally Tam 的教育專業歷程、資訊及通訊科技教育、設計與科技、STEAM 教學及校本數字教育實踐。",
   alternates: { canonical: "/about" },
   openGraph: { url: `${siteUrl}/about` },
 };
@@ -54,15 +54,12 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     "@id": `${siteUrl}/about#profile-page`,
-    name: "關於譚良蔚 Sally Tam 與 Christian Choi 的產品協作",
+    name: "關於譚良蔚 Sally Tam 的教育專業歷程",
     url: `${siteUrl}/about`,
     inLanguage: "zh-Hant-HK",
     isPartOf: { "@id": `${siteUrl}/#website` },
     mainEntity: { "@id": `${siteUrl}/#sally-tam` },
-    about: [
-      { "@id": `${siteUrl}/#sally-tam` },
-      { "@id": `${siteUrl}/#christian-choi` },
-    ],
+    about: { "@id": `${siteUrl}/#sally-tam` },
   };
 
   return (
@@ -77,15 +74,15 @@ export default function AboutPage() {
       <header className="about-hero">
         <div>
           <p className="eyebrow">About Sally</p>
-          <h1>理解教育現場，帶領產品真正落地。</h1>
+          <h1>理解教育現場，以資訊科技推動學與教。</h1>
           <p>
             Sally Tam
-            同時擁有前線教育、設計與科技及產品帶領視角。她把模糊需要整理成產品問題、優先次序及驗收標準，再帶領團隊由原型走到實際使用。
+            具備前線教育、設計與科技及數字教育經驗。她把真實需要整理成清晰問題，引導學生運用資訊科技分析、設計、製作及測試，也把同一套解難思維應用於校務系統開發。
           </p>
         </div>
         <Image
           src="/sally-tam-portrait.webp"
-          alt="教育科技 Product Owner 譚良蔚 Sally Tam 肖像"
+          alt="資訊及通訊科技教育工作者譚良蔚 Sally Tam 肖像"
           width={476}
           height={578}
           sizes="(max-width: 800px) 70vw, 32vw"
@@ -94,53 +91,25 @@ export default function AboutPage() {
 
       <section className="about-capabilities">
         <Reveal>
-          <h2>產品與教育專長</h2>
+          <h2>教育與資訊科技專長</h2>
         </Reveal>
         <div className="capability-grid">
           <Reveal>
-            <h3>Product Ownership</h3>
-            <p>問題定義、使用者需要、產品方向、優先次序、驗收及落地。</p>
+            <h3>資訊及通訊科技教育</h3>
+            <p>資訊素養、運算思維、數據管理、網頁應用及資訊保安。</p>
           </Reveal>
           <Reveal delay={0.05}>
-            <h3>Education Technology</h3>
-            <p>NFC、智能校園、校務流程及跨學科 STEAM 產品設計。</p>
+            <h3>校本數字教育</h3>
+            <p>NFC 應用、手機版資訊設計、智能校園及校務流程數字化。</p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h3>Team Leadership</h3>
-            <p>里程碑、實作任務、測試、回饋、成果展示及能力培育。</p>
+            <h3>STEAM 團隊帶領</h3>
+            <p>探究問題、實作任務、原型測試、協作學習及成果展示。</p>
           </Reveal>
           <Reveal delay={0.15}>
-            <h3>Product Evidence</h3>
-            <p>公開比賽、國際交流、校內實際使用及持續產品迭代。</p>
+            <h3>教學實踐與反思</h3>
+            <p>公開比賽、國際交流、校內實際使用及持續改良。</p>
           </Reveal>
-        </div>
-      </section>
-
-      <section className="training-section collaboration-profile">
-        <div>
-          <p className="eyebrow">Sally Tam × Christian Choi</p>
-          <h2>產品方向與技術落地的協作</h2>
-        </div>
-        <div className="collaboration-profile-copy">
-          <article>
-            <h3>譚良蔚 Sally Tam</h3>
-            <strong>Product Owner／產品帶領者</strong>
-            <p>
-              負責教育與校務問題定義、產品方向、使用者流程、優先次序、團隊帶領、校內協調、測試驗收與成果展示。
-            </p>
-          </article>
-          <article>
-            <h3>Christian Choi</h3>
-            <strong>Tech Consultant</strong>
-            <p>
-              支援技術可行性、方案架構、NFC
-              與網站整合、系統實作、產品訓練、除錯、部署及技術能力轉移。
-            </p>
-            <a href="https://christianchoi.com">
-              查看 Christian Choi 專業網站
-              <ArrowUpRight size={17} stroke={1.5} />
-            </a>
-          </article>
         </div>
       </section>
 
@@ -176,7 +145,7 @@ export default function AboutPage() {
       </section>
 
       <section className="about-contact">
-        <h2>交流教育科技與產品實踐</h2>
+        <h2>交流資訊科技教育與校本實踐</h2>
         <a href="mailto:sallytlww@gmail.com">
           sallytlww@gmail.com <ArrowUpRight size={22} stroke={1.4} />
         </a>

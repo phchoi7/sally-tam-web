@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         url: ogImageUrl,
         width: 1200,
         height: 630,
-        alt: `${project.title}｜Sally Tam 與 Christian Choi`,
+        alt: `${project.title}｜譚良蔚 Sally Tam 教育實踐`,
       };
 
   return {
@@ -45,16 +45,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: [
       "譚良蔚",
       "Sally Tam",
-      "Christian Choi",
-      "Product Owner",
-      "Tech Consultant",
+      "資訊及通訊科技教育",
+      "DSE ICT",
+      "校本數字教育",
       project.title,
       ...project.tools,
     ],
-    authors: [
-      { name: "譚良蔚 Sally Tam", url: siteUrl },
-      { name: "Christian Choi", url: "https://christianchoi.com" },
-    ],
+    authors: [{ name: "譚良蔚 Sally Tam", url: siteUrl }],
     alternates: { canonical: `/project/${project.slug}` },
     openGraph: {
       title: project.seoTitle ?? `${project.title}｜譚良蔚 Sally Tam`,
@@ -63,7 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: project.updatedAt,
       modifiedTime: project.updatedAt,
-      authors: [siteUrl, "https://christianchoi.com"],
+      authors: [siteUrl],
       images: [image],
     },
     twitter: {
@@ -109,13 +106,12 @@ export default async function ProjectDetailPage({ params }: Props) {
         operatingSystem: isProduct ? "Web" : undefined,
         keywords: [
           "Sally Tam",
-          "Christian Choi",
-          "Product Owner",
-          "Tech Consultant",
+          "資訊及通訊科技教育",
+          "DSE ICT",
+          "校本數字教育",
           ...project.tools,
         ],
         creator: { "@id": `${siteUrl}/#sally-tam` },
-        contributor: { "@id": `${siteUrl}/#christian-choi` },
         isPartOf: { "@id": `${siteUrl}/#website` },
         image:
           project.gallery?.map((item) => `${siteUrl}${item.src}`) ?? ogImageUrl,
@@ -129,7 +125,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           {
             "@type": "ListItem",
             position: 2,
-            name: "教育科技產品",
+            name: "教育實踐案例",
             item: `${siteUrl}/project`,
           },
           {
@@ -155,7 +151,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
       <header className="case-hero section-shell">
         <Link className="back-link" href="/project">
-          <ArrowLeft size={18} stroke={1.5} /> 返回教育科技產品
+          <ArrowLeft size={18} stroke={1.5} /> 返回教育實踐案例
         </Link>
         <div className="case-title">
           <div>
@@ -199,7 +195,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             <dd>{project.audience}</dd>
           </div>
           <div>
-            <dt>{isProduct ? "產品與技術" : "學習範疇"}</dt>
+            <dt>{isProduct ? "ICT 與教育範疇" : "學習範疇"}</dt>
             <dd>{project.tools.join("、")}</dd>
           </div>
         </dl>
@@ -207,11 +203,11 @@ export default async function ProjectDetailPage({ params }: Props) {
 
       <div className="case-content section-shell">
         <section className="case-challenge">
-          <p>{isProduct ? "產品命題" : "教學命題"}</p>
+          <p>{isProduct ? "實踐命題" : "教學命題"}</p>
           <h2>{project.challenge}</h2>
           {project.solution ? (
             <div className="case-solution">
-              <span>Solution</span>
+              <span>實踐方案</span>
               <p>{project.solution}</p>
             </div>
           ) : null}
@@ -220,8 +216,8 @@ export default async function ProjectDetailPage({ params }: Props) {
         {project.leadership?.length ? (
           <section className="case-leadership">
             <div>
-              <p className="section-kicker">Product leadership</p>
-              <h2>Sally Tam 如何帶領產品</h2>
+              <p className="section-kicker">Educational leadership</p>
+              <h2>Sally Tam 如何帶領教育科技實踐</h2>
             </div>
             <ul>
               {project.leadership.map((item) => (
@@ -235,7 +231,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         ) : null}
 
         <section className="case-process">
-          <h2>{isProduct ? "產品實踐" : "學習設計"}</h2>
+          <h2>{isProduct ? "開發與教學實踐" : "學習設計"}</h2>
           <ol>
             {project.approach.map((item, itemIndex) => (
               <li key={item}>
@@ -248,10 +244,10 @@ export default async function ProjectDetailPage({ params }: Props) {
 
         <section className="case-outcomes">
           <div>
-            <h2>{isProduct ? "產品成果" : "學習成果"}</h2>
+            <h2>{isProduct ? "實踐成果" : "學習成果"}</h2>
             <p>
               {isProduct
-                ? "以可操作產品、校內落地及公開證據呈現價值。"
+                ? "以可操作系統、校內推行及公開證據呈現教育價值。"
                 : "成果不只見於成品，也見於清楚的過程與判斷。"}
             </p>
           </div>
@@ -293,11 +289,76 @@ export default async function ProjectDetailPage({ params }: Props) {
           </section>
         ) : null}
 
+        {project.events?.length ? (
+          <section
+            className="case-events"
+            aria-labelledby="event-sections-title"
+          >
+            <header>
+              <p className="section-kicker">Competition & exchange record</p>
+              <h2 id="event-sections-title">比賽、展覽與國際交流紀錄</h2>
+              <p>
+                每項紀錄均按官方公開資料整理比賽目的、參與對象及 ICT
+                學習連繫；官方未公布的參賽隊數不作推測。
+              </p>
+            </header>
+            <div className="case-event-list">
+              {project.events.map((event) => (
+                <article className="case-event" id={event.id} key={event.id}>
+                  <header>
+                    <span>{event.year}</span>
+                    <div>
+                      <h3>{event.title}</h3>
+                      <strong>{event.result}</strong>
+                    </div>
+                  </header>
+                  <div className="case-event-details">
+                    <div>
+                      <h4>活動目的</h4>
+                      <p>{event.purpose}</p>
+                    </div>
+                    <div>
+                      <h4>參與對象與組別</h4>
+                      <p>{event.participants}</p>
+                    </div>
+                    <div>
+                      <h4>與資訊及通訊科技的連繫</h4>
+                      <p>{event.ictConnection}</p>
+                    </div>
+                    <div>
+                      <h4>Sally Tam 的帶領與開發工作</h4>
+                      <p>{event.sallyRole}</p>
+                    </div>
+                  </div>
+                  <div className="case-event-gallery">
+                    {event.images.map((image) => (
+                      <figure key={image.src}>
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          width={image.width}
+                          height={image.height}
+                          sizes="(max-width: 800px) 100vw, 50vw"
+                        />
+                        <figcaption>{image.caption}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                  <a href={event.source.url} target="_blank" rel="noreferrer">
+                    {event.source.label}
+                    <ArrowUpRight aria-hidden size={16} stroke={1.6} />
+                  </a>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
         {project.collaboration?.length ? (
           <section className="case-collaboration">
             <header>
-              <p className="section-kicker">Sally Tam × Christian Choi</p>
-              <h2>角色與協作</h2>
+              <p className="section-kicker">Roles & learning</p>
+              <h2>帶領、協作與學習</h2>
             </header>
             <div>
               {project.collaboration.map((item) => (
@@ -310,8 +371,8 @@ export default async function ProjectDetailPage({ params }: Props) {
         {project.gallery && project.gallery.length > 1 ? (
           <section className="case-gallery" aria-labelledby="gallery-title">
             <header>
-              <p className="section-kicker">Product evidence</p>
-              <h2 id="gallery-title">產品介面與成果</h2>
+              <p className="section-kicker">Practice evidence</p>
+              <h2 id="gallery-title">介面與實踐成果</h2>
             </header>
             <div className="case-gallery-grid">
               {project.gallery.slice(1).map((image) => (
@@ -331,12 +392,12 @@ export default async function ProjectDetailPage({ params }: Props) {
         ) : null}
 
         {project.productUrl || project.repositoryUrl ? (
-          <section className="case-links" aria-label="產品連結">
+          <section className="case-links" aria-label="案例連結">
             <p>Explore</p>
             <div>
               {project.productUrl ? (
                 <a href={project.productUrl} target="_blank" rel="noreferrer">
-                  開啟產品入口 <ArrowUpRight size={18} stroke={1.6} />
+                  開啟系統入口 <ArrowUpRight size={18} stroke={1.6} />
                 </a>
               ) : null}
               {project.repositoryUrl ? (
@@ -360,16 +421,13 @@ export default async function ProjectDetailPage({ params }: Props) {
         ) : null}
 
         <section className="case-reflection">
-          <p>{isProduct ? "Product reflection" : "教師反思"}</p>
+          <p>{isProduct ? "實踐反思" : "教師反思"}</p>
           <blockquote>{project.reflection}</blockquote>
         </section>
 
         <footer className="case-byline">
           <p>
-            Product Owner：<Link href="/about">譚良蔚 Sally Tam</Link>
-            <span aria-hidden> · </span>
-            Tech Consultant：
-            <a href="https://christianchoi.com">Christian Choi</a>
+            項目帶領及開發：<Link href="/about">譚良蔚 Sally Tam</Link>
           </p>
           <p>最後更新：2026 年 8 月 14 日</p>
         </footer>

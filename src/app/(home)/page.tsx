@@ -12,10 +12,10 @@ import { teachingProjects } from "@/lib/teaching-projects";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "譚良蔚 Sally Tam｜教育科技 Product Owner × Christian Choi",
+    absolute: "譚良蔚 Sally Tam｜資訊及通訊科技教育與校本數字教育",
   },
   description:
-    "譚良蔚 Sally Tam 主導 NFC 梅記智能超市、校園房間預約及教師當值生成產品；Christian Choi 以 Tech Consultant 身份支援架構、實作、訓練與部署。",
+    "譚良蔚 Sally Tam 的教育專業作品集，記錄 NFC 梅記智能超市、校園房間預約及教師當值生成系統，展現資訊及通訊科技、STEAM 與數字教育實踐。",
   alternates: { canonical: "/" },
 };
 
@@ -30,15 +30,12 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     "@id": `${siteUrl}/#profile-page`,
-    name: "譚良蔚 Sally Tam 與 Christian Choi 教育科技產品作品集",
+    name: "譚良蔚 Sally Tam 教育專業作品集",
     url: siteUrl,
     inLanguage: "zh-Hant-HK",
     isPartOf: { "@id": `${siteUrl}/#website` },
     mainEntity: { "@id": `${siteUrl}/#sally-tam` },
-    about: [
-      { "@id": `${siteUrl}/#sally-tam` },
-      { "@id": `${siteUrl}/#christian-choi` },
-    ],
+    about: { "@id": `${siteUrl}/#sally-tam` },
   };
 
   return (
@@ -53,23 +50,24 @@ export default function HomePage() {
 
       <section className="hero section-shell">
         <div className="hero-copy">
-          <p className="eyebrow">Education technology product portfolio</p>
+          <p className="eyebrow">ICT Education · STEAM · Digital Education</p>
           <h1>
             譚良蔚 Sally Tam
             <br />
             <span className="hero-role">
-              教育科技 Product Owner × STEAM Educator
+              資訊及通訊科技教育 × STEAM 教學實踐
             </span>
           </h1>
-          <p className="hero-statement">把校園需要，帶成真正可用的產品。</p>
+          <p className="hero-statement">
+            由教育現場出發，以資訊科技回應真實需要。
+          </p>
           <p className="hero-intro">
             譚良蔚 Sally Tam 由真實教育與校務需要出發，主導 NFC
-            梅記智能超市、校園房間預約與教師當值生成產品。Christian Choi 以 Tech
-            Consultant 身份提供技術架構、原型實作、能力訓練與部署支援。
+            梅記智能超市，並開發校園房間預約與教師當值生成系統，將資訊及通訊科技、數字教育與校本實踐連結起來。
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" href="/project">
-              瀏覽產品案例 <ArrowUpRight size={19} stroke={1.6} />
+              瀏覽教育實踐案例 <ArrowUpRight size={19} stroke={1.6} />
             </Link>
             <Link className="text-link" href="/about">
               認識 Sally Tam <ArrowDown size={17} stroke={1.5} />
@@ -84,7 +82,7 @@ export default function HomePage() {
           </div>
           <Image
             src="/sally-tam-portrait.webp"
-            alt="教育科技 Product Owner 譚良蔚 Sally Tam"
+            alt="資訊及通訊科技教育工作者譚良蔚 Sally Tam"
             width={476}
             height={578}
             priority
@@ -93,7 +91,7 @@ export default function HomePage() {
           />
           <p className="portrait-caption">
             譚良蔚 Sally Tam
-            <span>Education Technology Product Owner</span>
+            <span>ICT Education · STEAM · School-based Innovation</span>
           </p>
         </div>
       </section>
@@ -103,50 +101,50 @@ export default function HomePage() {
         aria-labelledby="profile-summary-title"
       >
         <div>
-          <p className="eyebrow">Product owner profile</p>
-          <h2 id="profile-summary-title">Sally Tam 如何把需要帶成產品？</h2>
+          <p className="eyebrow">Professional profile</p>
+          <h2 id="profile-summary-title">
+            Sally Tam 如何把資訊科技帶進教育現場？
+          </h2>
         </div>
         <div className="profile-summary-copy">
           <p>
             Sally
-            同時理解教學現場與產品決策。她由使用者、營運限制與學習目標開始，整理問題、設定優先次序，再帶領團隊完成原型、測試、公開展示及校內落地。
+            同時理解教學現場、校務運作與資訊科技應用。她由使用者需要、學習目標及實際限制開始，帶領團隊完成資料搜集、原型設計、測試、公開展示及校內推行。
           </p>
           <p>
-            Christian Choi 負責把產品方向連接到可行技術方案，支援架構、網站與
-            NFC
-            整合、系統實作、技術訓練、除錯及部署。兩人的協作把教育構想轉化成可運作、可驗證及可持續改善的產品。
+            她重視資訊素養、運算思維、數據管理、使用者體驗與資訊保安，並把這些概念轉化成學生可理解、校內可採用及能持續改善的數字教育實踐。
           </p>
           <p className="content-updated">資料最後更新：2026 年 8 月</p>
           <Link className="text-link" href="/about">
-            查看 Sally 的經歷與產品方法 <ArrowUpRight size={18} stroke={1.5} />
+            查看 Sally 的教學經歷與實踐 <ArrowUpRight size={18} stroke={1.5} />
           </Link>
         </div>
       </section>
 
       <section className="belief section-shell">
         <Reveal className="belief-lead">
-          <p>Product philosophy</p>
-          <h2>技術由需要開始，價值在落地中證明。</h2>
+          <p>Education philosophy</p>
+          <h2>資訊科技由需要開始，教育價值在實踐中建立。</h2>
         </Reveal>
         <Reveal className="belief-body" delay={0.08}>
           <p>
-            每個產品先確認真正使用者、操作限制及成功條件，再以小步原型、真實測試與持續回饋降低風險。產品不以功能數量定義，而以能否被理解、採用及改善來衡量。
+            每個項目先理解學習者或校務使用者的需要，再以資料搜集、系統分析、原型製作、真實測試與持續反思逐步改善，讓資訊及通訊科技知識連結生活、社會與校園運作。
           </p>
-          <ul className="subject-list" aria-label="產品專長">
-            <li>Product Ownership</li>
-            <li>Education Technology</li>
-            <li>Technical Consulting</li>
-            <li>School Operations</li>
+          <ul className="subject-list" aria-label="教育專長">
+            <li>資訊及通訊科技教育</li>
+            <li>數字教育與資訊素養</li>
+            <li>STEAM 跨學科學習</li>
+            <li>校務流程數字化</li>
           </ul>
         </Reveal>
       </section>
 
       <section className="selected-work section-shell">
         <Reveal className="section-heading">
-          <h2>代表教育科技產品</h2>
+          <h2>代表教育科技實踐</h2>
           <p>
-            Sally Tam 主導產品方向與落地，Christian Choi 支援技術架構與實作；由
-            NFC 社會創新走到校務流程數碼化。
+            由 NFC 社會創新走到校務流程數字化，呈現 Sally Tam 如何把 ICT
+            知識、學生學習與學校實際需要連結起來。
           </p>
         </Reveal>
         <div className="project-grid">
@@ -161,14 +159,14 @@ export default function HomePage() {
           ))}
         </div>
         <Link className="all-work-link" href="/project">
-          查看全部產品與案例 <ArrowUpRight size={21} stroke={1.5} />
+          查看全部教育實踐案例 <ArrowUpRight size={21} stroke={1.5} />
         </Link>
       </section>
 
       <section className="recognition">
         <div className="section-shell recognition-inner">
           <Reveal>
-            <h2>產品里程碑與公開成果</h2>
+            <h2>項目里程碑與公開成果</h2>
           </Reveal>
           <div className="recognition-list">
             {highlights.map(([year, title, result], index) => (
@@ -188,8 +186,8 @@ export default function HomePage() {
 
       <section className="home-cta section-shell">
         <Reveal>
-          <p>Sally Tam × Christian Choi</p>
-          <h2>由教育問題定義，到可靠產品落地。</h2>
+          <p>譚良蔚 Sally Tam</p>
+          <h2>由資訊科技教學，到校本數字教育實踐。</h2>
           <a
             className="button button-primary"
             href="mailto:sallytlww@gmail.com"

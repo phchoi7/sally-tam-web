@@ -3,7 +3,7 @@
 // engines back to the custom domain.
 export const siteUrl = "https://www.sally-tam.com";
 export const siteHost = new URL(siteUrl).host;
-export const ogImageUrl = `${siteUrl}/og-sally-christian.jpg`;
+export const ogImageUrl = `${siteUrl}/og-sally-ict.jpg`;
 
 // Compatibility exports retained while the downloaded template's unused routes
 // are phased out.

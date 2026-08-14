@@ -5,15 +5,16 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div>
-        <p className="footer-title">由教育問題定義，到可靠產品落地。</p>
+        <p className="footer-title">
+          由教育現場出發，以資訊科技連結學習與實踐。
+        </p>
         <a href="mailto:sallytlww@gmail.com">
           sallytlww@gmail.com <ArrowUpRight size={18} stroke={1.5} />
         </a>
       </div>
       <div className="footer-meta">
-        <p>譚良蔚 Sally Tam × Christian Choi</p>
-        <p>Education Technology Product Owner × Tech Consultant</p>
-        <a href="https://christianchoi.com">christianchoi.com</a>
+        <p>譚良蔚 Sally Tam</p>
+        <p>ICT Education · STEAM · School-based Digital Education</p>
         <Link href="/privacy-policy">私隱政策</Link>
       </div>
     </footer>
