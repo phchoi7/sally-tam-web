@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">Sally Tam monogram</title>
+  <description id="description">A geometric ST monogram in forest green and coral on warm cream.</description>
+  <rect width="512" height="512" rx="116" fill="#f3f0e8"/>
+  <rect x="26" y="26" width="460" height="460" rx="94" fill="none" stroke="#17382e" stroke-width="28"/>
+  <path
+    d="M345 151c-31-40-92-55-150-39-52 14-79 50-67 87 12 36 53 50 112 61 74 14 112 37 114 80 2 52-47 84-108 85-58 1-105-18-135-55"
+    fill="none"
+    stroke="#17382e"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="54"
+  />
+  <path d="M337 105h92M383 105v113" fill="none" stroke="#d98269" stroke-linecap="square" stroke-width="34"/>
+  <circle cx="405" cy="407" r="18" fill="#d9a83e"/>
+</svg>
