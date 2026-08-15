@@ -14,6 +14,7 @@
 - [NFC 梅記智能超市](https://www.sally-tam.com/project/nfc-smartmart)：以 NFC 近場通訊、手機網站、數字內容及語音資訊連結 DSE ICT、STEAM、長者友善、健康飲食及社會關懷
 - [校園房間預約系統](https://www.sally-tam.com/project/school-room-booking-system)：以手機版響應設計、分層使用權限、數據管理及資訊保安改善場地預約與批核
 - [教師智能當值生成系統](https://www.sally-tam.com/project/teacher-duty-scheduler)：把編排條件轉化成可檢查的邏輯規則，連結演算法思維、數據處理及安全存取
+- [AI 教學與數字素養實踐框架](https://www.sally-tam.com/project/responsible-ai-education)：由 Gemini Certified Educator 譚良蔚 Sally Tam 整理生成式 AI 概念、提示設計、資料查證、私隱安全、教師覆核與反思流程
 
 ## 專業經驗與 ICT 教學能力
 

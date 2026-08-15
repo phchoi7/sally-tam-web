@@ -5,9 +5,9 @@ import { ogImageUrl, siteUrl } from "@/lib/site-config";
 import { teachingProjects } from "@/lib/teaching-projects";
 
 export const metadata: Metadata = {
-  title: "教育科技與 ICT 實踐案例｜Sally Tam",
+  title: "教育科技與 ICT 實踐案例",
   description:
-    "瀏覽譚良蔚 Sally Tam 的資訊及通訊科技教育與校本數字教育案例：NFC 梅記智能超市、校園房間預約及教師智能當值生成系統。",
+    "瀏覽譚良蔚 Sally Tam 的資訊及通訊科技教育與校本數字教育案例：AI 教學、NFC 梅記智能超市、校園房間預約及教師智能當值生成系統。",
   alternates: { canonical: "/project" },
   openGraph: {
     title: "資訊及通訊科技教育實踐｜Sally Tam",
@@ -64,7 +64,7 @@ export default function ProjectPage() {
         <p className="eyebrow">Education & ICT case studies</p>
         <h1>教育實踐案例</h1>
         <p>
-          Sally Tam 由教育與校務需要出發，帶領 NFC
+          Sally Tam 由教育與校務需要出發，建立負責任 AI 教學框架、帶領 NFC
           學習項目，並開發校園房間預約與教師當值生成系統，把資訊及通訊科技知識應用於真實情境。
         </p>
       </header>

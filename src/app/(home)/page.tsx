@@ -12,7 +12,7 @@ import { teachingProjects } from "@/lib/teaching-projects";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "譚良蔚 Sally Tam｜Google AI 認證教育者與資訊科技教育",
+    absolute: "譚良蔚 Sally Tam｜Gemini Certified Educator 與資訊科技教育",
   },
   description:
     "譚良蔚 Sally Tam 是 Google Gemini Certified Educator，作品集記錄 AI 教育、資訊及通訊科技、STEAM、NFC 梅記智能超市與校本數字教育實踐。",
@@ -55,7 +55,7 @@ export default function HomePage() {
             譚良蔚 Sally Tam
             <br />
             <span className="hero-role">
-              Google AI 認證教育者 × 資訊科技 × STEAM 教學
+              Gemini Certified Educator × 資訊科技 × STEAM 教學
             </span>
           </h1>
           <p className="hero-statement">

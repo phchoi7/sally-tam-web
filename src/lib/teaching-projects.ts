@@ -512,7 +512,6 @@ export const teachingProjects: TeachingProject[] = [
         height: 633,
       },
     ],
-    repositoryUrl: "https://github.com/phchoi7/sdbnsmbookingsystem",
     privacyNote:
       "營運 Repo 及生產資料不公開；案例圖片使用測試資料，不展示真實教師電郵、預約內容或內部資料結構。",
     reflection:
@@ -631,6 +630,91 @@ export const teachingProjects: TeachingProject[] = [
     updatedAt: "2026-08-15",
   },
   {
+    slug: "responsible-ai-education",
+    title: "AI 教學與數字素養實踐框架",
+    titleEn: "Responsible AI Education & Digital Literacy Framework",
+    seoTitle:
+      "AI 教學與數字素養實踐｜Gemini Certified Educator 譚良蔚 Sally Tam",
+    seoDescription:
+      "Gemini Certified Educator 譚良蔚 Sally Tam 建立中學 AI 教學與數字素養框架，涵蓋生成式 AI 概念、提示設計、資料查證、私隱安全、教師覆核及學習反思。",
+    summary:
+      "譚良蔚 Sally Tam 以 Gemini Certified Educator 專業認證為基礎，整理一套適合香港中學資訊科技與跨學科課堂的 AI 教學框架，引導學習者理解生成式 AI、提出有效問題、查證內容、保護個人資料，並保留人的判斷與責任。",
+    year: "2025–2026",
+    category: "人工智能教育與數字素養",
+    audience: "中學資訊科技、STEAM 及跨學科學習者",
+    tools: [
+      "生成式 AI 概念",
+      "提示設計與反覆改良",
+      "資料查證與媒體素養",
+      "私隱、版權與負責任使用",
+      "教師覆核與學習反思",
+    ],
+    accent: "blue",
+    projectType: "teaching-case",
+    role: "AI 教學框架設計與專業實踐：譚良蔚 Sally Tam",
+    challenge:
+      "當生成式人工智能能快速產生文字、圖像與建議時，如何讓學生不只是取得答案，而是理解工具限制、核對資料、保護私隱，並對最後提交的作品與判斷負責？",
+    solution:
+      "框架以「理解、提問、查證、改良、反思」五個階段組織 AI 學習。教師先界定學習目標及可使用範圍，學生再比較提示方式、檢查來源與偏差、記錄人工修訂，最後說明 AI 提供了甚麼協助、哪些內容由自己判斷，以及如何改善作品。",
+    approach: [
+      "理解：以中學生活及資訊科技情境介紹生成式 AI 如何根據資料模式產生內容，分辨流暢回答與可靠證據並不相等。",
+      "提問：把模糊要求拆成學習目的、背景、限制、輸出形式及評估準則，透過比較不同提示理解輸入如何影響結果。",
+      "查證：要求學生找出可核實的事實、日期、數據及引文，回到可信來源交叉檢查，並辨識遺漏、偏差、過時資料與虛構內容。",
+      "安全：課堂任務不輸入學生個人資料、校內機密或未獲授權作品；討論版權、引用、資料足跡及不同 AI 服務的使用限制。",
+      "改良與反思：保留提示、AI 初稿、人工修改及來源紀錄，由教師按學科知識、推理、證據與原創判斷覆核，而非把 AI 輸出直接視為完成品。",
+    ],
+    leadership: [
+      "把 AI 工具運用連結明確學習目標，而非以使用工具本身作成果",
+      "建立查證、引用、私隱、安全與人工覆核的課堂界線",
+      "以提示版本、資料來源及修改紀錄呈現學習過程",
+      "按學生年齡、學科內容及數字能力調整任務支援",
+    ],
+    outcomes: [
+      "建立可套用於資訊科技、STEAM 與跨學科任務的五階段 AI 學習流程。",
+      "把提示設計連結問題分解、輸入輸出、測試與迭代等資訊及通訊科技概念。",
+      "以來源查證、偏差辨識與人工修訂培養數據及媒體素養。",
+      "以私隱、版權、透明披露及教師覆核維持教育專業判斷。",
+      "本頁呈現教學框架與專業能力，不虛構學生作品或量化成效；真實課堂證據將在取得合適授權後補充。",
+    ],
+    milestones: [
+      {
+        year: "2025",
+        title: "Google for Education 專業認證",
+        result: "取得 Gemini Certified Educator",
+        detail:
+          "認證涵蓋生成式 AI 與 Gemini 的教育應用、工作流程、個人化學習及引導學生負責任使用人工智能等基礎能力，有效期至 2028 年。",
+        source: {
+          label: "Google for Education：Gemini Certified Educator 官方介紹",
+          url: "https://edu.google.com/for-educators/certification-programs/product-expertise/",
+        },
+        type: "release",
+      },
+      {
+        year: "2025–2026",
+        title: "AI 教學框架整理",
+        result: "連結 ICT、數字素養與負責任使用",
+        detail:
+          "將 AI 概念、提示設計、來源查證、私隱安全、人工修訂與學習反思整理成可檢查的教學流程。",
+        type: "release",
+      },
+    ],
+    gallery: [
+      {
+        src: "/credentials/sally-tam-google-gemini-certified-educator.webp",
+        alt: "譚良蔚 Leung Wai Tam 獲頒 Google for Education Gemini Certified Educator 證書",
+        caption:
+          "Google for Education 頒發的 Gemini Certified Educator 專業認證，證明 Sally Tam 具備在教育情境負責任運用 Google AI 的知識與基礎能力；證書有效期至 2028 年。",
+        width: 1400,
+        height: 1002,
+      },
+    ],
+    privacyNote:
+      "AI 課堂不應輸入可識別學生身份、校內機密、未公開評估或未獲授權內容；教師須按學校政策、學習者年齡及服務條款決定工具與任務安排。",
+    reflection:
+      "AI 教育的重點不是追求最快答案，而是讓學習者懂得提出好問題、辨認不確定性、尋找證據並承擔最後判斷。教師的角色是設計有目的的學習、建立安全界線，並讓思考過程重新變得可見。",
+    updatedAt: "2026-08-15",
+  },
+  {
     slug: "qef-cross-disciplinary-design",
     title: "QEF 跨學科設計項目",
     titleEn: "Designing useful objects through STEAM",
@@ -659,33 +743,6 @@ export const teachingProjects: TeachingProject[] = [
     reflection:
       "好的製作課不以成品為終點。能指出問題、比較方案並解釋改良方向，設計學習才真正發生。",
     updatedAt: "2026-08-15",
-  },
-  {
-    slug: "health-management-innovation",
-    title: "健康管理與社會關懷創新方案",
-    titleEn: "Learning from a real social context",
-    summary:
-      "Sally Tam 帶領團隊把課堂知識轉化為社會關懷方案，於教育局實地學習博覽獲創新方案銅獎及最受歡迎獎。",
-    year: "2024",
-    category: "社會創新",
-    audience: "Sally 所帶領的跨學科團隊",
-    tools: ["資料蒐集", "協作設計", "原型測試", "匯報表達"],
-    accent: "coral",
-    challenge:
-      "如何由真實社會需要出發，在有限時間內把研究轉化為可溝通、可測試的創新方案？",
-    approach: [
-      "先建立議題背景與使用者視角，再界定團隊要處理的核心問題。",
-      "透過角色分工、階段檢視及回饋保持跨學科團隊的共同方向。",
-      "把方案原理、使用流程與社會價值整理成清晰展示，反覆演練匯報。",
-    ],
-    outcomes: [
-      "獲實地學習博覽 2024 創新方案銅獎。",
-      "同時獲得最受歡迎獎。",
-      "累積由研究、製作到公開展示的完整項目經驗。",
-    ],
-    reflection:
-      "比賽成績是鼓勵，最重要的成果是先聆聽需要，再運用科技提出有根據的回應。",
-    updatedAt: "2026-08-14",
   },
   {
     slug: "youth-innovation-programming",

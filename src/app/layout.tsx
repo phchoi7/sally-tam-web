@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     locale: "zh_HK",
     url: siteUrl,
     siteName: "譚良蔚 Sally Tam 教育專業作品集",
-    title: "譚良蔚 Sally Tam｜Google AI 認證教育者與資訊科技教育",
+    title: "譚良蔚 Sally Tam｜Gemini Certified Educator 與資訊科技教育",
     description:
       "Google Gemini Certified Educator 譚良蔚 Sally Tam 的 AI 教育、資訊及通訊科技、STEAM 教學與校本數字教育實踐。",
     images: [
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "譚良蔚 Sally Tam｜Google AI 認證教育者",
+    title: "譚良蔚 Sally Tam｜Gemini Certified Educator",
     description:
       "Sally Tam 的 AI 教育、資訊及通訊科技、STEAM 教學與校本數字教育作品集。",
     images: [

@@ -3,14 +3,38 @@ import {
   IconMail as Mail,
 } from "@tabler/icons-react";
 import type { Metadata } from "next";
-import { siteUrl } from "@/lib/site-config";
+import { ogImageUrl, siteUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "聯絡 Sally Tam｜資訊及通訊科技教育交流",
+  title: "聯絡及資訊科技教育交流",
   description:
     "聯絡譚良蔚 Sally Tam，交流資訊及通訊科技教育、NFC SmartMart、STEAM 教學、智能校園及校本數字教育實踐。",
   alternates: { canonical: "/contact" },
-  openGraph: { url: `${siteUrl}/contact` },
+  openGraph: {
+    title: "聯絡及資訊科技教育交流｜譚良蔚 Sally Tam",
+    description:
+      "聯絡 Sally Tam，交流資訊及通訊科技教育、AI 教學、STEAM、NFC 應用及校本數字教育實踐。",
+    url: `${siteUrl}/contact`,
+    images: [
+      {
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        alt: "聯絡譚良蔚 Sally Tam 作資訊科技教育交流",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "聯絡及資訊科技教育交流｜譚良蔚 Sally Tam",
+    description: "交流 AI、ICT、STEAM、NFC 應用與校本數字教育實踐。",
+    images: [
+      {
+        url: ogImageUrl,
+        alt: "聯絡譚良蔚 Sally Tam 作資訊科技教育交流",
+      },
+    ],
+  },
 };
 
 export default function ContactPage() {

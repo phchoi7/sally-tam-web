@@ -62,7 +62,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: project.seoDescription ?? project.summary,
       url: `${siteUrl}/project/${project.slug}`,
       type: "article",
-      publishedTime: project.updatedAt,
       modifiedTime: project.updatedAt,
       authors: [siteUrl],
       images: [image],
@@ -439,7 +438,15 @@ export default async function ProjectDetailPage({ params }: Props) {
           <p>
             項目帶領及開發：<Link href="/about">譚良蔚 Sally Tam</Link>
           </p>
-          <p>最後更新：2026 年 8 月 14 日</p>
+          <p>
+            最後更新：
+            {new Intl.DateTimeFormat("zh-HK", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+              timeZone: "Asia/Hong_Kong",
+            }).format(new Date(`${project.updatedAt}T00:00:00+08:00`))}
+          </p>
         </footer>
       </div>
 

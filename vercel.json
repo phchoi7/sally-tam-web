@@ -4,6 +4,13 @@
   "buildCommand": "yarn build",
   "outputDirectory": "out",
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/project/health-management-innovation",
+      "destination": "/project/nfc-smartmart#hmsc-expo-2024",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

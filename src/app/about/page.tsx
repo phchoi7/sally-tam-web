@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/site/reveal";
-import { siteUrl } from "@/lib/site-config";
+import { ogImageUrl, siteUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "關於 Sally Tam｜Google AI 認證、資訊科技與 STEAM 教學",
+  title: "Gemini AI 認證、資訊科技與 STEAM 教學經歷",
   description:
     "認識譚良蔚 Sally Tam 的 Google Gemini Certified Educator 專業認證、資訊科技與 STEAM 教學、eClass 校本數字化、開放數據 API 及學生創科帶領經驗。",
   keywords: [
@@ -21,10 +21,30 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "關於譚良蔚 Sally Tam｜AI、ICT、STEAM 與校本數字化",
+    title: "Gemini AI 認證、資訊科技與 STEAM 教學經歷｜譚良蔚 Sally Tam",
     description:
       "Sally Tam 的 Google AI 認證、跨級資訊科技教學、eClass 統籌、開放數據 API 及學生創科帶領經驗。",
     url: `${siteUrl}/about`,
+    images: [
+      {
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+        alt: "譚良蔚 Sally Tam 的 AI、資訊科技與 STEAM 教學經歷",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gemini AI 認證與 ICT 教學經歷｜譚良蔚 Sally Tam",
+    description:
+      "認識 Sally Tam 的 Gemini Certified Educator 認證、資訊科技、STEAM 與校本數字教育經驗。",
+    images: [
+      {
+        url: ogImageUrl,
+        alt: "譚良蔚 Sally Tam 的 AI、資訊科技與 STEAM 教學經歷",
+      },
+    ],
   },
 };
 
