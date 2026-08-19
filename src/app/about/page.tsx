@@ -185,7 +185,6 @@ export default function AboutPage() {
       />
       <header className="about-hero">
         <div>
-          <p className="eyebrow">About Sally</p>
           <h1>理解教育現場，以資訊科技推動學與教。</h1>
           <p>
             Sally Tam
@@ -217,9 +216,8 @@ export default function AboutPage() {
           />
         </Reveal>
         <Reveal className="about-credential-copy" delay={0.06}>
-          <p className="eyebrow">Google AI education credential</p>
           <h2 id="about-google-ai-title">Gemini Certified Educator</h2>
-          <strong>Google for Education 專業認證 · 2025–2028</strong>
+          <strong>Google for Education 專業認證 · 2025-2028</strong>
           <p>
             Sally Tam 具備在教育情境運用 Google AI
             的知識、技能與基本能力，並以教學目標、資訊判斷、數字素養及負責任使用為原則，把人工智能融入課堂與學習設計。
@@ -259,7 +257,6 @@ export default function AboutPage() {
         aria-labelledby="school-leadership-title"
       >
         <header>
-          <p className="eyebrow">School-based leadership</p>
           <h2 id="school-leadership-title">校本職務與教育領導</h2>
           <p>
             Sally
@@ -282,7 +279,6 @@ export default function AboutPage() {
         aria-labelledby="ict-practice-title"
       >
         <header>
-          <p className="eyebrow">ICT teaching practice</p>
           <h2 id="ict-practice-title">資訊科技教學與實作能力</h2>
           <p>
             工具不是終點；重點是讓學生理解資料、邏輯、系統、測試及使用者需要，建立可遷移的資訊及通訊科技能力。
@@ -322,7 +318,6 @@ export default function AboutPage() {
         aria-labelledby="teaching-evidence-title"
       >
         <header>
-          <p className="eyebrow">Selected teaching evidence</p>
           <h2 id="teaching-evidence-title">其他 ICT 與 STEAM 教學成果</h2>
         </header>
         <div className="teaching-evidence-list">

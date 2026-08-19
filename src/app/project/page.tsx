@@ -61,7 +61,6 @@ export default function ProjectPage() {
         }}
       />
       <header className="page-intro">
-        <p className="eyebrow">Education & ICT case studies</p>
         <h1>教育實踐案例</h1>
         <p>
           Sally Tam 由教育與校務需要出發，建立負責任 AI 教學框架、帶領 NFC

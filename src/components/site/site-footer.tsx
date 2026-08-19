@@ -14,7 +14,7 @@ export function SiteFooter() {
       </div>
       <div className="footer-meta">
         <p>譚良蔚 Sally Tam</p>
-        <p>ICT Education · STEAM · School-based Digital Education</p>
+        <p>ICT Education / STEAM / School-based Digital Education</p>
         <Link href="/privacy-policy">私隱政策</Link>
       </div>
     </footer>

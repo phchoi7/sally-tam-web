@@ -59,7 +59,6 @@ export default function ContactPage() {
         }}
       />
       <div className="contact-copy">
-        <p className="eyebrow">Contact</p>
         <h1>交流資訊及通訊科技教育與校本實踐。</h1>
         <p>
           歡迎交流 DSE 資訊及通訊科技教育、NFC 應用、STEAM
