@@ -410,7 +410,6 @@ export const teachingProjects: TeachingProject[] = [
         height: 1200,
       },
     ],
-    repositoryUrl: "https://github.com/phchoi7/sdbnsm-nfc",
     privacyNote:
       "本案例以 Sally Tam 為作品集主體；獲帶領團隊以集體方式呈現，不使用個人姓名作搜尋關鍵字。",
     reflection:
@@ -740,6 +739,16 @@ export const teachingProjects: TeachingProject[] = [
       "整合設計與科技、資訊科技及 STEAM 能力。",
       "以展示及反思練習表達設計理據。",
     ],
+    gallery: [
+      {
+        src: "/projects/qef-cross-disciplinary-design-school.jpg",
+        alt: "香港中學 STEAM 工場內學生製作智能時鐘、電話座及樂器原型的情境圖",
+        caption:
+          "以香港學校工場環境呈現智能時鐘、電話座、電子元件與樂器原型的跨學科製作過程。",
+        width: 1672,
+        height: 941,
+      },
+    ],
     reflection:
       "好的製作課不以成品為終點。能指出問題、比較方案並解釋改良方向，設計學習才真正發生。",
     updatedAt: "2026-08-15",
@@ -769,6 +778,15 @@ export const teachingProjects: TeachingProject[] = [
       "建立由構思、編程、測試到演示的完整工作流程。",
       "以清晰語言說明程式功能與設計選擇。",
       "於 2024 全球青少年創新設計與發明大賽獲編程設計組金獎。",
+    ],
+    gallery: [
+      {
+        src: "/projects/youth-innovation-programming-school.jpg",
+        alt: "香港中學電腦室內學生測試 Scratch 籃球遊戲及積木式程式的情境圖",
+        caption: "以香港學校電腦室呈現學生協作測試積木式程式與籃球遊戲。",
+        width: 1672,
+        height: 941,
+      },
     ],
     milestones: [
       {
@@ -809,6 +827,16 @@ export const teachingProjects: TeachingProject[] = [
       "把數據觀察連結至可理解的使用情境。",
       "於開放數據應用比賽 2024 入圍最後 36 強。",
       "建立由公開資料走到服務構思的方法。",
+    ],
+    gallery: [
+      {
+        src: "/projects/open-data-application-school.jpg",
+        alt: "香港中學電腦室內學生分析香港地圖、開放數據及 API 資料的情境圖",
+        caption:
+          "以香港學校電腦室呈現學生分析城市地圖、開放數據及 API 資料的協作過程。",
+        width: 1672,
+        height: 941,
+      },
     ],
     milestones: [
       {
