@@ -1,7 +1,4 @@
-import {
-  IconArrowDown as ArrowDown,
-  IconArrowUpRight as ArrowUpRight,
-} from "@tabler/icons-react";
+import { IconArrowUpRight as ArrowUpRight } from "@tabler/icons-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,9 +17,9 @@ export const metadata: Metadata = {
 };
 
 const highlights = [
-  ["2024/25", "香港理工大學 Fun-Tech 比賽", "創意 RFID 組冠軍"],
-  ["2025", "香港教育城學生創新大賽", "高中組季軍"],
-  ["2025", "IEEE TALE Macao", "K–12 國際展示與交流"],
+  ["香港理工大學 Fun-Tech 比賽", "創意 RFID 組冠軍", "2024/25"],
+  ["香港教育城學生創新大賽", "高中組季軍", "2025"],
+  ["IEEE TALE Macao", "K-12 國際展示與交流", "2025"],
 ];
 
 export default function HomePage() {
@@ -48,98 +45,65 @@ export default function HomePage() {
         }}
       />
 
-      <section className="hero section-shell">
-        <div className="hero-copy">
-          <p className="eyebrow">Google AI Certified Education · ICT · STEAM</p>
+      <section className="home-hero section-shell">
+        <div className="home-hero-copy">
+          <p className="home-identity">
+            <span>譚良蔚</span>
+            <span>ICT and STEAM educator</span>
+          </p>
           <h1>
-            譚良蔚 Sally Tam
-            <br />
-            <span className="hero-role">
-              Gemini Certified Educator × 資訊科技 × STEAM 教學
-            </span>
+            Sally Tam
+            <span>把資訊科技放進真實教育場景。</span>
           </h1>
-          <p className="hero-statement">
-            由教育現場出發，以資訊科技回應真實需要。
+          <p className="home-hero-intro">
+            由課堂、學生創科到校務系統，以清晰設計回應學校真正需要。
           </p>
-          <p className="hero-intro">
-            譚良蔚 Sally Tam 由真實教育與校務需要出發，主導 NFC
-            梅記智能超市，並開發校園房間預約與教師當值生成系統，將資訊及通訊科技、數字教育與校本實踐連結起來。
-          </p>
-          <Link
-            className="hero-credential"
-            href="#google-ai-credential"
-            aria-label="查看 Sally Tam 的 Google Gemini Certified Educator 專業認證"
-          >
-            <span>Google for Education</span>
-            <strong>Gemini Certified Educator</strong>
-            <ArrowDown aria-hidden size={17} stroke={1.5} />
-          </Link>
-          <div className="hero-actions">
+          <div className="home-hero-actions">
             <Link className="button button-primary" href="/project">
-              瀏覽教育實踐案例 <ArrowUpRight size={19} stroke={1.6} />
+              瀏覽實踐案例 <ArrowUpRight aria-hidden size={18} stroke={1.7} />
             </Link>
             <Link className="text-link" href="/about">
-              認識 Sally Tam <ArrowDown size={17} stroke={1.5} />
+              專業背景 <ArrowUpRight aria-hidden size={17} stroke={1.6} />
             </Link>
           </div>
         </div>
-        <div className="hero-portrait-wrap">
-          <div className="hero-stamp" aria-hidden>
-            <span>Design</span>
-            <span>Technology</span>
-            <span>STEAM</span>
-          </div>
+        <div className="home-portrait">
           <Image
             src="/sally-tam-portrait.webp"
             alt="資訊及通訊科技教育工作者譚良蔚 Sally Tam"
             width={476}
             height={578}
             priority
-            sizes="(max-width: 800px) 78vw, 38vw"
-            className="hero-portrait"
+            sizes="(max-width: 800px) 92vw, 38vw"
+            className="home-portrait-image"
           />
-          <p className="portrait-caption">
-            譚良蔚 Sally Tam
-            <span>Gemini Certified Educator · ICT Education · STEAM</span>
+          <p className="home-portrait-note">
+            <span>Google Gemini Certified Educator</span>
+            <span>資訊科技、設計與科技及 STEAM 教師</span>
           </p>
         </div>
       </section>
 
       <section
-        className="credential-evidence section-shell"
+        className="home-credential section-shell"
         id="google-ai-credential"
         aria-labelledby="google-ai-credential-title"
       >
-        <Reveal className="credential-evidence-copy">
-          <p className="eyebrow">AI education credential</p>
+        <Reveal className="home-credential-copy">
+          <p className="section-kicker">Professional credential</p>
           <h2 id="google-ai-credential-title">
-            Google 認證 AI 教育者，回應學與教需要。
+            AI 教育需要判斷，不只需要工具。
           </h2>
           <p>
-            譚良蔚 Sally Tam 已取得 Google for Education 頒發的 Gemini Certified
-            Educator 專業資格，證明具備在教育情境運用 Google AI
-            所需的知識、技能與基本能力。
+            Sally 已取得 Google for Education 的 Gemini Certified Educator
+            資格，並以學習目的、資訊判斷及負責任使用為實踐原則。
           </p>
-          <p>
-            她重視負責任、具學習目的及以教師判斷為本的人工智能應用，將 AI
-            素養連結課堂設計、資訊評估、創意解難與學生學習。
-          </p>
-          <dl>
-            <div className="credential-fact">
-              <dt>專業認證</dt>
-              <dd>Google Gemini Certified Educator</dd>
-            </div>
-            <div className="credential-fact">
-              <dt>有效期</dt>
-              <dd>2025–2028</dd>
-            </div>
-          </dl>
           <Link className="text-link" href="/about#google-ai-credential">
-            查看 Sally 的 AI 教育專業資歷
+            查看認證與教學原則
             <ArrowUpRight aria-hidden size={18} stroke={1.5} />
           </Link>
         </Reveal>
-        <Reveal className="credential-certificate" delay={0.08}>
+        <Reveal className="home-certificate" delay={0.08}>
           <Image
             src="/credentials/sally-tam-google-gemini-certified-educator.webp"
             alt="Google for Education 頒發予譚良蔚 Sally Tam 的 Gemini Certified Educator 證書"
@@ -147,64 +111,43 @@ export default function HomePage() {
             height={1002}
             sizes="(max-width: 800px) 100vw, 52vw"
           />
-          <p>
-            Google Gemini Certified Educator · Leung Wai Tam（譚良蔚 Sally Tam）
-          </p>
+          <p>Google for Education, valid 2025-2028</p>
         </Reveal>
       </section>
 
       <section
-        className="profile-summary section-shell"
-        aria-labelledby="profile-summary-title"
+        className="home-practice section-shell"
+        aria-labelledby="home-practice-title"
       >
-        <div>
-          <p className="eyebrow">Professional profile</p>
-          <h2 id="profile-summary-title">
-            Sally Tam 如何把資訊科技帶進教育現場？
-          </h2>
-        </div>
-        <div className="profile-summary-copy">
+        <Reveal className="home-practice-intro">
+          <h2 id="home-practice-title">從需要開始，再選擇技術。</h2>
           <p>
             Sally
-            同時理解教學現場、校務運作與資訊科技應用。她由使用者需要、學習目標及實際限制開始，帶領團隊完成資料搜集、原型設計、測試、公開展示及校內推行。
+            同時理解教學、校務運作與資訊科技。每個項目先釐清使用者和限制，再設計、測試及推行。
           </p>
-          <p>
-            她重視資訊素養、運算思維、數據管理、使用者體驗與資訊保安，並把這些概念轉化成學生可理解、校內可採用及能持續改善的數字教育實踐。
-          </p>
-          <p className="content-updated">資料最後更新：2026 年 8 月</p>
-          <Link className="text-link" href="/about">
-            查看 Sally 的教學經歷與實踐 <ArrowUpRight size={18} stroke={1.5} />
-          </Link>
-        </div>
-      </section>
-
-      <section className="belief section-shell">
-        <Reveal className="belief-lead">
-          <p>Education philosophy</p>
-          <h2>資訊科技由需要開始，教育價值在實踐中建立。</h2>
         </Reveal>
-        <Reveal className="belief-body" delay={0.08}>
-          <p>
-            每個項目先理解學習者或校務使用者的需要，再以資料搜集、系統分析、原型製作、真實測試與持續反思逐步改善，讓資訊及通訊科技知識連結生活、社會與校園運作。
-          </p>
-          <ul className="subject-list" aria-label="教育專長">
-            <li>資訊及通訊科技教育</li>
-            <li>數字教育與資訊素養</li>
-            <li>STEAM 跨學科學習</li>
-            <li>校務流程數字化</li>
-          </ul>
+        <Reveal className="home-practice-tracks" delay={0.08}>
+          <article>
+            <h3>課堂</h3>
+            <p>資訊素養、運算思維、網頁應用與負責任 AI。</p>
+          </article>
+          <article>
+            <h3>學生創科</h3>
+            <p>NFC、STEAM、原型測試、跨學科協作與公開展示。</p>
+          </article>
+          <article>
+            <h3>校務系統</h3>
+            <p>把房間預約、教師當值與數字平台流程變得清晰可用。</p>
+          </article>
         </Reveal>
       </section>
 
-      <section className="selected-work section-shell">
-        <Reveal className="section-heading">
+      <section className="home-projects section-shell">
+        <Reveal className="home-section-heading">
           <h2>代表教育科技實踐</h2>
-          <p>
-            由 NFC 社會創新走到校務流程數字化，呈現 Sally Tam 如何把 ICT
-            知識、學生學習與學校實際需要連結起來。
-          </p>
+          <p>真實項目、真實使用情境，以及從構想到落地的完整過程。</p>
         </Reveal>
-        <div className="project-grid">
+        <div className="home-project-grid">
           {teachingProjects.slice(0, 3).map((project, index) => (
             <Reveal
               key={project.slug}
@@ -215,23 +158,20 @@ export default function HomePage() {
             </Reveal>
           ))}
         </div>
-        <Link className="all-work-link" href="/project">
-          查看全部教育實踐案例 <ArrowUpRight size={21} stroke={1.5} />
+        <Link className="home-all-work" href="/project">
+          瀏覽實踐案例 <ArrowUpRight aria-hidden size={19} stroke={1.6} />
         </Link>
       </section>
 
-      <section className="recognition">
-        <div className="section-shell recognition-inner">
+      <section className="home-results">
+        <div className="section-shell home-results-inner">
           <Reveal>
-            <h2>項目里程碑與公開成果</h2>
+            <p className="section-kicker">Selected outcomes</p>
+            <h2>讓作品走出課室。</h2>
           </Reveal>
-          <div className="recognition-list">
-            {highlights.map(([year, title, result], index) => (
-              <Reveal
-                className="recognition-item"
-                key={title}
-                delay={index * 0.05}
-              >
+          <div className="home-results-list">
+            {highlights.map(([title, result, year], index) => (
+              <Reveal className="home-result" key={title} delay={index * 0.05}>
                 <span>{year}</span>
                 <p>{title}</p>
                 <strong>{result}</strong>
@@ -241,15 +181,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="home-cta section-shell">
+      <section className="home-contact section-shell">
         <Reveal>
-          <p>譚良蔚 Sally Tam</p>
-          <h2>由資訊科技教學，到校本數字教育實踐。</h2>
+          <h2>交流 ICT、STEAM 與校本數字教育。</h2>
+          <p>歡迎學校、教育工作者及合作夥伴聯絡。</p>
           <a
             className="button button-primary"
             href="mailto:sallytlww@gmail.com"
           >
-            與我聯絡 <ArrowUpRight size={19} stroke={1.6} />
+            聯絡 <ArrowUpRight aria-hidden size={18} stroke={1.6} />
           </a>
         </Reveal>
       </section>

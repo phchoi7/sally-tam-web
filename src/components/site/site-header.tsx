@@ -1,4 +1,3 @@
-import { IconArrowUpRight as ArrowUpRight } from "@tabler/icons-react";
 import Link from "next/link";
 
 const links = [
@@ -21,9 +20,6 @@ export function SiteHeader() {
           </Link>
         ))}
       </nav>
-      <a className="header-email" href="mailto:sallytlww@gmail.com">
-        電郵聯絡 <ArrowUpRight size={17} stroke={1.6} />
-      </a>
     </header>
   );
 }

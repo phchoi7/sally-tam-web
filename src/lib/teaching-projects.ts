@@ -79,7 +79,7 @@ export const teachingProjects: TeachingProject[] = [
       "譚良蔚 Sally Tam 帶領 NFC 梅記智能超市，由 NFC 標籤、網站及語音資訊出發，連結資訊及通訊科技教育、長者友善、健康飲食與社會關懷。",
     summary:
       "譚良蔚 Sally Tam 由真實社區需要出發，帶領團隊把 NFC 標籤、商品網站及語音資訊整合成長者友善的智能超市體驗，並透過跨年度比賽、展覽與交流持續改良。",
-    year: "2023–2025",
+    year: "2023-2025",
     category: "旗艦教育科技作品",
     audience: "長者及 Sally 所帶領的 STEAM 團隊",
     tools: [
@@ -129,7 +129,7 @@ export const teachingProjects: TeachingProject[] = [
     ],
     milestones: [
       {
-        year: "2023–24",
+        year: "2023-24",
         title: "伍少梅 NFC",
         result: "作品初版",
         detail:
@@ -179,7 +179,7 @@ export const teachingProjects: TeachingProject[] = [
       {
         year: "2025.12",
         title: "IEEE TALE 2025 Macao",
-        result: "K–12 工作坊國際展示與交流",
+        result: "K-12 工作坊國際展示與交流",
         detail:
           "以教育科技改善社會為題展示 NFC 應用，與亞太區教育工作者、工程師及研究人員交流。此項屬國際展示，不列作競賽獎項。",
         type: "showcase",
@@ -339,7 +339,7 @@ export const teachingProjects: TeachingProject[] = [
       {
         id: "ieee-tale-2025",
         year: "2025.12",
-        title: "IEEE TALE 2025 澳門 K–12 學生工作坊",
+        title: "IEEE TALE 2025 澳門 K-12 學生工作坊",
         result: "國際教育科技展示與交流（非競賽）",
         purpose:
           "工作坊以教育科技如何改善社會為題，讓中學生分享構思、探索新興科技，並與全球工程教育社群交流，培養好奇心、協作及科技改善社會的視野。",
@@ -350,14 +350,14 @@ export const teachingProjects: TeachingProject[] = [
         sallyRole:
           "Sally 帶領團隊準備英語及跨文化展示，整理設計流程與社會價值，並引導學生與工程師、研究人員及教育工作者交流。",
         source: {
-          label: "IEEE TALE 2025 官方 K–12 工作坊",
+          label: "IEEE TALE 2025 官方 K-12 工作坊",
           url: "https://2025.tale-conference.org/k-12-student-workshop",
         },
         images: [
           {
             src: "/projects/nfc-ieee-tale-2025-community.webp",
-            alt: "IEEE TALE 2025 K–12 學生工作坊教育科技交流合照",
-            caption: "K–12 學生工作坊連接中學團隊與亞太區工程教育社群。",
+            alt: "IEEE TALE 2025 K-12 學生工作坊教育科技交流合照",
+            caption: "K-12 學生工作坊連接中學團隊與亞太區工程教育社群。",
             width: 1440,
             height: 820,
           },
@@ -370,7 +370,7 @@ export const teachingProjects: TeachingProject[] = [
           },
           {
             src: "/projects/nfc-ieee-tale-2025-workshop.webp",
-            alt: "IEEE TALE 2025 K–12 工作坊參與團隊合照",
+            alt: "IEEE TALE 2025 K-12 工作坊參與團隊合照",
             caption: "參與團隊以教育科技改善社會為共同交流主題。",
             width: 1440,
             height: 823,
@@ -426,7 +426,7 @@ export const teachingProjects: TeachingProject[] = [
       "譚良蔚 Sally Tam 因應真實校務需要開發校園房間預約系統，整合場地資料、衝突檢查、行政批核、雙語通知、使用紀錄及數據整理。",
     summary:
       "Sally Tam 由校內房間使用與批核需要出發，開發並推行一套已投入實際運作的預約系統，以數字化流程提升校園資源運用效率。",
-    year: "2025–2026",
+    year: "2025-2026",
     category: "智能校園落地系統",
     audience: "教師、校務行政及系統管理員",
     tools: [
@@ -527,7 +527,7 @@ export const teachingProjects: TeachingProject[] = [
       "譚良蔚 Sally Tam 因應香港中學校務需要開發教師當值生成系統，減少人手編排，提升規則一致性、工作分配透明度與數據保安。",
     summary:
       "由 Sally Tam 按學校實際運作需要主導的教師當值編排工具，目標是減少重複人手排更、統一編排規則並提高行政效率。",
-    year: "2025–2026",
+    year: "2025-2026",
     category: "校務流程自動化",
     audience: "教師及負責當值編排的行政人員",
     tools: [
@@ -639,7 +639,7 @@ export const teachingProjects: TeachingProject[] = [
       "Gemini Certified Educator 譚良蔚 Sally Tam 建立中學 AI 教學與數字素養框架，涵蓋生成式 AI 概念、提示設計、資料查證、私隱安全、教師覆核及學習反思。",
     summary:
       "譚良蔚 Sally Tam 以 Gemini Certified Educator 專業認證為基礎，整理一套適合香港中學資訊科技與跨學科課堂的 AI 教學框架，引導學習者理解生成式 AI、提出有效問題、查證內容、保護個人資料，並保留人的判斷與責任。",
-    year: "2025–2026",
+    year: "2025-2026",
     category: "人工智能教育與數字素養",
     audience: "中學資訊科技、STEAM 及跨學科學習者",
     tools: [
@@ -690,7 +690,7 @@ export const teachingProjects: TeachingProject[] = [
         type: "release",
       },
       {
-        year: "2025–2026",
+        year: "2025-2026",
         title: "AI 教學框架整理",
         result: "連結 ICT、數字素養與負責任使用",
         detail:
@@ -723,7 +723,7 @@ export const teachingProjects: TeachingProject[] = [
       "譚良蔚 Sally Tam 以智能時鐘、電話座及夏威夷小結他設計製作，連結使用者需要、Micro:bit、數碼建模、材料加工、測試及 STEAM 反思。",
     summary:
       "Sally Tam 以智能時鐘、電話座及夏威夷小結他為題，串連設計思維、科技應用與動手製作。",
-    year: "2022–2025",
+    year: "2022-2025",
     category: "跨學科 STEAM",
     audience: "Sally 所帶領的初中學習團隊",
     tools: ["設計思維", "原型製作", "Micro:bit", "Onshape"],
