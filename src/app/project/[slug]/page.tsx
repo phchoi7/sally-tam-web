@@ -93,6 +93,11 @@ export default async function ProjectDetailPage({ params }: Props) {
       (milestone) =>
         `${milestone.year} ${milestone.title}：${milestone.result}`,
     );
+  const citationSources = project.events?.flatMap((event) =>
+    [event.source, event.additionalSource].filter(
+      (source): source is NonNullable<typeof source> => Boolean(source),
+    ),
+  );
 
   const projectJsonLd = {
     "@context": "https://schema.org",
@@ -127,6 +132,13 @@ export default async function ProjectDetailPage({ params }: Props) {
         image:
           project.gallery?.map((item) => `${siteUrl}${item.src}`) ?? ogImageUrl,
         award: awardNames?.length ? awardNames : undefined,
+        citation: citationSources?.length
+          ? citationSources.map((source) => ({
+              "@type": "CreativeWork",
+              name: source.label,
+              url: source.url,
+            }))
+          : undefined,
       },
       {
         "@type": "BreadcrumbList",
@@ -373,6 +385,16 @@ export default async function ProjectDetailPage({ params }: Props) {
                     {event.source.label}
                     <ArrowUpRight aria-hidden size={16} stroke={1.6} />
                   </a>
+                  {event.additionalSource ? (
+                    <a
+                      href={event.additionalSource.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {event.additionalSource.label}
+                      <ArrowUpRight aria-hidden size={16} stroke={1.6} />
+                    </a>
+                  ) : null}
                 </article>
               ))}
             </div>

@@ -36,6 +36,10 @@ export type ProjectEvent = {
     label: string;
     url: string;
   };
+  additionalSource?: {
+    label: string;
+    url: string;
+  };
   images: ProjectImage[];
 };
 
@@ -282,6 +286,11 @@ export const teachingProjects: TeachingProject[] = [
         source: {
           label: "香港理工大學官方比賽資料",
           url: "https://www.polyu.edu.hk/apss/others/polyu-fun-tech-competition-2024/",
+        },
+        additionalSource: {
+          label:
+            "天主教慈幼會伍少梅中學官方報導：理大 Fun-Tech 比賽 2024/25｜牆角寒梅",
+          url: "https://www.sdbnsm.edu.hk/post/%E7%90%86%E5%A4%A7fun-tech%E6%AF%94%E8%B3%BD2024-25-%E7%89%86%E8%A7%92%E5%AF%92%E6%A2%85",
         },
         images: [
           {
