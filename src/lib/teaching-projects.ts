@@ -18,6 +18,11 @@ export type ProjectMilestone = {
   type: "award" | "showcase" | "release";
 };
 
+export type ProjectFaq = {
+  question: string;
+  answer: string;
+};
+
 export type ProjectEvent = {
   id: string;
   year: string;
@@ -64,6 +69,8 @@ export type TeachingProject = {
   milestones?: ProjectMilestone[];
   gallery?: ProjectImage[];
   events?: ProjectEvent[];
+  faq?: ProjectFaq[];
+  extraKeywords?: string[];
   productUrl?: string;
   repositoryUrl?: string;
   privacyNote?: string;
@@ -74,9 +81,10 @@ export const teachingProjects: TeachingProject[] = [
     slug: "nfc-smartmart",
     title: "NFC 梅記智能超市",
     titleEn: "NFC SmartMart",
-    seoTitle: "NFC 梅記智能超市｜譚良蔚 Sally Tam 資訊及通訊科技教育",
+    seoTitle:
+      "梅記智能超市｜譚良蔚老師（Sally Tam）帶領學生團隊之 NFC 教育科技作品",
     seoDescription:
-      "譚良蔚 Sally Tam 帶領 NFC 梅記智能超市，由 NFC 標籤、網站及語音資訊出發，連結資訊及通訊科技教育、長者友善、健康飲食與社會關懷。",
+      "梅記智能超市（NFC 梅記智能超市）由天主教慈幼會伍少梅中學資訊及通訊科技科教師譚良蔚（Sally Tam）帶領學生團隊構思及開發，作品以 NFC 標籤、網站及語音資訊連結長者友善、健康飲食與社會關懷。",
     summary:
       "譚良蔚 Sally Tam 由真實社區需要出發，帶領團隊把 NFC 標籤、商品網站及語音資訊整合成長者友善的智能超市體驗，並透過跨年度比賽、展覽與交流持續改良。",
     year: "2023-2025",
@@ -88,6 +96,15 @@ export const teachingProjects: TeachingProject[] = [
       "手機版資訊設計",
       "數字內容管理",
       "共融設計",
+    ],
+    extraKeywords: [
+      "梅記智能超市",
+      "梅記智能超市 譚良蔚",
+      "梅記智能超市 老師",
+      "梅記智能超市 帶領",
+      "NFC 梅記智能超市 老師",
+      "伍少梅中學 NFC",
+      "譚良蔚老師",
     ],
     accent: "amber",
     projectType: "education-product",
@@ -412,6 +429,23 @@ export const teachingProjects: TeachingProject[] = [
     ],
     privacyNote:
       "本案例以 Sally Tam 為作品集主體；獲帶領團隊以集體方式呈現，不使用個人姓名作搜尋關鍵字。",
+    faq: [
+      {
+        question: "梅記智能超市是誰帶領完成的作品？",
+        answer:
+          "梅記智能超市（NFC 梅記智能超市）由天主教慈幼會伍少梅中學資訊及通訊科技科教師譚良蔚（Sally Tam）帶領學生團隊構思及開發。Sally Tam 負責問題定義、教學設計、技術指導、項目里程碑及公開展示，學生團隊在她帶領下完成資料搜集、原型製作與匯報。",
+      },
+      {
+        question: "NFC 梅記智能超市是什麼？",
+        answer:
+          "NFC 梅記智能超市（NFC SmartMart）是譚良蔚老師帶領學生團隊開發的教育科技作品，透過 NFC 標籤連結商品網站，讓長者以手機靠近標籤即可讀取或收聽清晰的價格與營養資訊，回應長者友善、健康飲食與社會關懷等真實需要。",
+      },
+      {
+        question: "梅記智能超市同伍少梅 NFC 有咩關係？",
+        answer:
+          "「梅記智能超市」是「伍少梅 NFC」的延伸發展版本，兩者均由譚良蔚老師帶領同一團隊完成。團隊在 2023/24 年度先完成「伍少梅 NFC」原型，其後於 2024/25 年度香港理工大學 Fun-Tech 比賽中，由譚良蔚老師帶領進一步強化為「梅記智能超市」，並奪得創意 RFID 組冠軍。",
+      },
+    ],
     reflection:
       "教育科技的價值不在於加入最多功能，而在於能否把技術轉化成清楚、可使用、可持續改善的服務。NFC SmartMart 讓系統設計、社會關懷與 STEAM 學習成為同一條實踐路線。",
     updatedAt: "2026-08-14",

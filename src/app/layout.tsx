@@ -123,10 +123,12 @@ const jsonLd = {
       worksFor: {
         "@type": "EducationalOrganization",
         name: "天主教慈幼會伍少梅中學",
+        url: "https://www.sdbnsm.edu.hk",
       },
       alumniOf: {
         "@type": "CollegeOrUniversity",
         name: "香港教育大學",
+        url: "https://www.eduhk.hk",
       },
       hasCredential: {
         "@type": "EducationalOccupationalCredential",
@@ -135,6 +137,7 @@ const jsonLd = {
         recognizedBy: {
           "@type": "Organization",
           name: "Google for Education",
+          url: "https://edu.google.com",
         },
         validFor: "P3Y",
       },

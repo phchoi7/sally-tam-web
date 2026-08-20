@@ -1093,6 +1093,7 @@ img {
 
 .case-leadership,
 .case-collaboration,
+.case-faq,
 .case-gallery {
   display: grid;
   grid-template-columns: 0.72fr 1.28fr;
@@ -1103,6 +1104,7 @@ img {
 
 .case-leadership h2,
 .case-collaboration h2,
+.case-faq h2,
 .case-gallery h2,
 .case-milestones h2 {
   margin-top: 0.8rem;
@@ -1399,6 +1401,29 @@ img {
   padding: 1.15rem 0;
   border-bottom: 1px solid var(--line);
   color: #3f4b44;
+}
+
+.case-faq-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.case-faq-list > div {
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.case-faq-list h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 660;
+  color: var(--ink);
+}
+
+.case-faq-list p {
+  margin: 0;
+  color: #3f4b44;
+  line-height: 1.9;
 }
 
 .case-gallery {
@@ -2007,6 +2032,7 @@ img {
   .case-outcomes,
   .case-leadership,
   .case-collaboration,
+  .case-faq,
   .case-gallery,
   .timeline-section,
   .training-section {
@@ -2018,6 +2044,7 @@ img {
   .case-outcomes,
   .case-leadership,
   .case-collaboration,
+  .case-faq,
   .case-gallery,
   .timeline-section,
   .training-section {
@@ -3006,6 +3033,7 @@ body {
 .case-challenge h2,
 .case-leadership h2,
 .case-collaboration h2,
+.case-faq h2,
 .case-gallery h2,
 .case-milestones h2,
 .case-process h2,
@@ -3027,6 +3055,10 @@ body {
 .case-collaboration > div > p,
 .case-privacy p {
   color: var(--muted);
+}
+
+.case-faq-list h3 {
+  color: var(--ink);
 }
 
 .case-outcomes {

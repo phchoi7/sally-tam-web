@@ -11,7 +11,7 @@
 
 ## 代表實踐
 
-- [NFC 梅記智能超市](https://www.sally-tam.com/project/nfc-smartmart)：以 NFC 近場通訊、手機網站、數字內容及語音資訊連結 DSE ICT、STEAM、長者友善、健康飲食及社會關懷
+- [NFC 梅記智能超市](https://www.sally-tam.com/project/nfc-smartmart)：梅記智能超市由譚良蔚（Sally Tam）老師帶領學生團隊構思及開發，以 NFC 近場通訊、手機網站、數字內容及語音資訊連結 DSE ICT、STEAM、長者友善、健康飲食及社會關懷
 - [校園房間預約系統](https://www.sally-tam.com/project/school-room-booking-system)：以手機版響應設計、分層使用權限、數據管理及資訊保安改善場地預約與批核
 - [教師智能當值生成系統](https://www.sally-tam.com/project/teacher-duty-scheduler)：把編排條件轉化成可檢查的邏輯規則，連結演算法思維、數據處理及安全存取
 - [AI 教學與數字素養實踐框架](https://www.sally-tam.com/project/responsible-ai-education)：由 Gemini Certified Educator 譚良蔚 Sally Tam 整理生成式 AI 概念、提示設計、資料查證、私隱安全、教師覆核與反思流程
@@ -34,6 +34,11 @@
 - 香港教育城學生創新大賽 2025：高中組季軍
 - IEEE TALE 2025 Macao：K–12 學生工作坊國際教育科技展示，並非競賽獎項
 - Christian Choi 以 Technical Consultant（技術顧問）身份在有其出鏡的 Fun-Tech 及香港教育城成果活動中呈現，為學生提供業界技術概念、方案優化及進階技能指導
+
+## 常見問題
+
+- 梅記智能超市（NFC 梅記智能超市）是誰的作品？由天主教慈幼會伍少梅中學資訊及通訊科技科教師譚良蔚（Sally Tam）帶領學生團隊構思及開發。Sally Tam 負責問題定義、教學設計、技術指導、項目里程碑及公開展示。
+- 梅記智能超市與伍少梅 NFC 是同一項目：Sally Tam 帶領同一團隊，由 2023/24 年度「伍少梅 NFC」原型，發展成 2024/25 年度香港理工大學 Fun-Tech 比賽創意 RFID 組冠軍作品「梅記智能超市」。
 
 ## 其他頁面
 

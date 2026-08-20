@@ -50,6 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "校本數字教育",
       project.title,
       ...project.tools,
+      ...(project.extraKeywords ?? []),
       ...(project.contributors?.flatMap((contributor) => [
         contributor.name,
         contributor.role,
@@ -115,6 +116,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           ...project.tools,
         ],
         creator: { "@id": `${siteUrl}/#sally-tam` },
+        author: { "@id": `${siteUrl}/#sally-tam` },
         contributor: project.contributors?.map((contributor) => ({
           "@type": "Person",
           name: contributor.name,
@@ -145,7 +147,21 @@ export default async function ProjectDetailPage({ params }: Props) {
           },
         ],
       },
-    ],
+      project.faq?.length
+        ? {
+            "@type": "FAQPage",
+            "@id": `${projectUrl}#faq`,
+            mainEntity: project.faq.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.answer,
+              },
+            })),
+          }
+        : undefined,
+    ].filter(Boolean),
   };
 
   return (
@@ -372,6 +388,23 @@ export default async function ProjectDetailPage({ params }: Props) {
             <div>
               {project.collaboration.map((item) => (
                 <p key={item}>{item}</p>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {project.faq?.length ? (
+          <section className="case-faq" aria-labelledby="faq-title">
+            <header>
+              <p className="section-kicker">FAQ</p>
+              <h2 id="faq-title">常見問題</h2>
+            </header>
+            <div className="case-faq-list">
+              {project.faq.map((item) => (
+                <div key={item.question}>
+                  <h3>{item.question}</h3>
+                  <p>{item.answer}</p>
+                </div>
               ))}
             </div>
           </section>
